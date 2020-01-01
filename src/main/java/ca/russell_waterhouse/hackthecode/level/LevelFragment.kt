@@ -1,7 +1,6 @@
 package ca.russell_waterhouse.hackthecode.level
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import ca.russell_waterhouse.hackthecode.R
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class LevelFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var decodedString: String? = null
     private var encodedString: String? = null
     private var listenerLevel: OnLevelFragmentInteractionListener? = null
@@ -47,13 +46,13 @@ class LevelFragment : Fragment() {
         return fragView
     }
 
-    fun initializeViews(parent: View){
+    private fun initializeViews(parent: View){
         val encodedTV = parent.findViewById<TextView>(R.id.encoded_textview)
-        encodedTV.setText(encodedString)
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
+        encodedTV.text = encodedString
+        val hintButton = parent.findViewById<ExtendedFloatingActionButton>(R.id.hint_button)
+        hintButton.setOnClickListener{
+            listenerLevel?.hintRequested()
+        }
     }
 
     override fun onAttach(context: Context) {
@@ -82,8 +81,8 @@ class LevelFragment : Fragment() {
      * for more information.
      */
     interface OnLevelFragmentInteractionListener {
-        // TODO: Update argument type and name
         fun testString(string: String)
+        fun hintRequested()
     }
 
     companion object {

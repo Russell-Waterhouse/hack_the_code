@@ -1,11 +1,12 @@
 package ca.russell_waterhouse.hackthecode.level
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.R
 
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
-    val levelFragmentTAG = "Level Fragment"
+    private val levelFragmentTAG = "Level Fragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,5 +22,8 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
 //        TODO: Finish function
     }
 
-
+    override fun hintRequested(){
+        Toast.makeText(this, "hint requested", Toast.LENGTH_LONG).show()
+//        TODO: finish function
+    }
 }
