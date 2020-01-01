@@ -54,7 +54,6 @@ class LevelFragment : Fragment() {
 
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
-        listenerLevel?.onFragmentInteraction(uri)
     }
 
     override fun onAttach(context: Context) {
@@ -84,7 +83,7 @@ class LevelFragment : Fragment() {
      */
     interface OnLevelFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        fun testString(string: String)
     }
 
     companion object {

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Hack The Code</string>
     <string name="hello_blank_fragment">Hello blank frag</string>
+    <string name="prompt_decode_string">Decode This Sentence!</string>
 </resources>
