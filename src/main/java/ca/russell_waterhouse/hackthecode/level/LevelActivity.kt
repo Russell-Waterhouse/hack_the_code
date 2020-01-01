@@ -26,4 +26,9 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         Toast.makeText(this, "hint requested", Toast.LENGTH_LONG).show()
 //        TODO: finish function
     }
+
+    override fun encodeString(string: String){
+//        TODO: finish function
+        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+    }
 }

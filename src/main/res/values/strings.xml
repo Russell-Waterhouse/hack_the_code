@@ -5,4 +5,7 @@
     <string name="encoded_here">Encoded text put here at runtime</string>
     <string name="final_answer">Final Answer</string>
     <string name="hint">Hint</string>
+    <string name="encode">Encode</string>
+    <string name="encoded">Encoded</string>
+    <string name="unencoded">Plain</string>
 </resources>

@@ -2,10 +2,12 @@ package ca.russell_waterhouse.hackthecode.level
 
 import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import ca.russell_waterhouse.hackthecode.R
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -53,6 +55,22 @@ class LevelFragment : Fragment() {
         hintButton.setOnClickListener{
             listenerLevel?.hintRequested()
         }
+        val encodeButton = parent.findViewById<Button>(R.id.encode_button)
+        val encodeET = parent.findViewById<EditText>(R.id.string_to_encode_edit_text)
+        encodeButton.setOnClickListener{
+            listenerLevel?.encodeString(encodeET.text.toString())
+        }
+        val encodedTable = parent.findViewById<TableLayout>(R.id.encoded_table)
+        val row1 = TableRow(context)
+        val left = TextView(context)
+        left.text = "example sentence"
+        left.gravity = Gravity.LEFT
+        val right = TextView(context)
+        right.text = "2x1mpl2 s2nt2nc2"
+        right.gravity = Gravity.RIGHT
+        row1.addView(left)
+        row1.addView(right)
+        encodedTable.addView(row1)
     }
 
     override fun onAttach(context: Context) {
@@ -82,6 +100,7 @@ class LevelFragment : Fragment() {
      */
     interface OnLevelFragmentInteractionListener {
         fun testString(string: String)
+        fun encodeString(string: String)
         fun hintRequested()
     }
 
