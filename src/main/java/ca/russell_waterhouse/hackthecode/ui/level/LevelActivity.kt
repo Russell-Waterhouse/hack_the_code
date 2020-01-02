@@ -1,12 +1,25 @@
-package ca.russell_waterhouse.hackthecode.level
+package ca.russell_waterhouse.hackthecode.ui.level
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.R
 
+private const val levelKEY = "level_to_load"
+
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
     private val levelFragmentTAG = "Level Fragment"
+
+    companion object {
+        fun getIntent(context: Context, level: Int): Intent{
+            val intent = Intent(context, LevelActivity::class.java)
+            intent.putExtra(levelKEY, level)
+//            TODO: get the level number out of the intent
+            return intent
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

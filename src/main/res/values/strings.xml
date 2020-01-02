@@ -10,5 +10,17 @@
     <string name="unencoded">Plain</string>
     <string name="check_answer">Check My Answer</string>
     <string name="example_sentence">example sentence</string>
-    <string name="empty_string"/>
+    <string name="empty_string" />
+    <string name="select_level">Select level</string>
+    <string name="instructions">Instructions</string>
+    <string name="about_app">About the App</string>
+    <string name="select_level_prompt">Select a level</string>
+    <string name="numeric_1">1</string>
+    <string name="numeric_2">2</string>
+    <string name="numeric_3">3</string>
+    <string name="numeric_4">4</string>
+    <string name="numeric_5">5</string>
+    <string name="numeric_6">6</string>
+    <string name="numeric_7">7</string>
+    <string name="numeric_8">8</string>
 </resources>

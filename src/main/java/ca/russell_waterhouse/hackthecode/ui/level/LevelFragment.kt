@@ -1,4 +1,4 @@
-package ca.russell_waterhouse.hackthecode.level
+package ca.russell_waterhouse.hackthecode.ui.level
 
 import android.content.Context
 import android.os.Bundle
