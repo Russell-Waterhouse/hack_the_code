@@ -2,7 +2,6 @@ package ca.russell_waterhouse.hackthecode.level
 
 import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +11,9 @@ import androidx.fragment.app.Fragment
 import ca.russell_waterhouse.hackthecode.R
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 
-// TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_DECODED_STRING = "param1"
+private const val ARG_ENCODED_STRING = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -33,8 +31,8 @@ class LevelFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            decodedString = it.getString(ARG_PARAM1)
-            encodedString = it.getString(ARG_PARAM2)
+            decodedString = it.getString(ARG_DECODED_STRING)
+            encodedString = it.getString(ARG_ENCODED_STRING)
         }
     }
 
@@ -64,10 +62,10 @@ class LevelFragment : Fragment() {
         val row1 = TableRow(context)
         val left = TextView(context)
         left.text = "example sentence"
-        left.gravity = Gravity.LEFT
+        left.gravity = Gravity.START
         val right = TextView(context)
         right.text = "2x1mpl2 s2nt2nc2"
-        right.gravity = Gravity.RIGHT
+        right.gravity = Gravity.END
         row1.addView(left)
         row1.addView(right)
         encodedTable.addView(row1)
@@ -117,8 +115,8 @@ class LevelFragment : Fragment() {
         fun newInstance(decodedString: String, encodedString: String) =
             LevelFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, decodedString)
-                    putString(ARG_PARAM2, encodedString)
+                    putString(ARG_DECODED_STRING, decodedString)
+                    putString(ARG_ENCODED_STRING, encodedString)
                 }
             }
     }
