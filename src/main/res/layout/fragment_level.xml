@@ -34,14 +34,17 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
+            android:id="@+id/final_answer"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="@string/final_answer"
+            android:autofillHints="@string/final_answer"
             android:inputType="textShortMessage|textLongMessage|text"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/check_answer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/encoded_textview" />
 
@@ -97,11 +100,12 @@
             android:layout_marginEnd="32dp"
             android:text="@string/encode"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/final_answer" />
 
         <EditText
+            android:autofillHints="@string/encode"
             android:id="@+id/string_to_encode_edit_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
@@ -111,7 +115,17 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toStartOf="@+id/encode_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/final_answer" />
+
+        <Button
+            android:id="@+id/check_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/check_answer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/encoded_textview" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

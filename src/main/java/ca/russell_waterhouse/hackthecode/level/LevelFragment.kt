@@ -57,11 +57,12 @@ class LevelFragment : Fragment() {
         val encodeET = parent.findViewById<EditText>(R.id.string_to_encode_edit_text)
         encodeButton.setOnClickListener{
             listenerLevel?.encodeString(encodeET.text.toString())
+            encodeET.setText(R.string.empty_string)
         }
         val encodedTable = parent.findViewById<TableLayout>(R.id.encoded_table)
         val row1 = TableRow(context)
         val left = TextView(context)
-        left.text = "example sentence"
+        left.text = R.string.example_sentence.toString()
         left.gravity = Gravity.START
         val right = TextView(context)
         right.text = "2x1mpl2 s2nt2nc2"
@@ -69,6 +70,12 @@ class LevelFragment : Fragment() {
         row1.addView(left)
         row1.addView(right)
         encodedTable.addView(row1)
+        val checkAnswerButton = parent.findViewById<Button>(R.id.check_answer)
+        val finalAnswerET = parent.findViewById<EditText>(R.id.final_answer)
+        checkAnswerButton.setOnClickListener{
+            listenerLevel?.testString(finalAnswerET.text.toString())
+            finalAnswerET.setText(R.string.empty_string)
+        }
     }
 
     override fun onAttach(context: Context) {

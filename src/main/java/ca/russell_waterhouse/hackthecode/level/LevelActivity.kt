@@ -18,6 +18,7 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun testString(string: String){
+        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
 //        TODO: Finish function
     }
 

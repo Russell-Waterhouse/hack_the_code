@@ -3,9 +3,12 @@
     <string name="hello_blank_fragment">Hello blank frag</string>
     <string name="prompt_decode_string">Decode This Sentence!</string>
     <string name="encoded_here">Encoded text put here at runtime</string>
-    <string name="final_answer">Final Answer</string>
+    <string name="final_answer">Answer</string>
     <string name="hint">Hint</string>
     <string name="encode">Encode</string>
     <string name="encoded">Encoded</string>
     <string name="unencoded">Plain</string>
+    <string name="check_answer">Check My Answer</string>
+    <string name="example_sentence">example sentence</string>
+    <string name="empty_string"/>
 </resources>
