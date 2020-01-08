@@ -14,13 +14,13 @@ import ca.russell_waterhouse.hackthecode.R
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [InstructionsFragment.OnFragmentInteractionListener] interface
+ * [InstructionsFragment.OnInstructionsFragmentInteractionListener] interface
  * to handle interaction events.
  * Use the [InstructionsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 class InstructionsFragment : Fragment() {
-    private var listener: OnFragmentInteractionListener? = null
+    private var listener: OnInstructionsFragmentInteractionListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +32,7 @@ class InstructionsFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
+        if (context is OnInstructionsFragmentInteractionListener) {
             listener = context
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
@@ -55,7 +55,7 @@ class InstructionsFragment : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-    interface OnFragmentInteractionListener {
+    interface OnInstructionsFragmentInteractionListener {
 //        TODO("Update as needed")
     }
 

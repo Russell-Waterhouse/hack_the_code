@@ -35,8 +35,8 @@ class Model (application: Application) {
         return repository.getWordsForLevel(currentLevel)
     }
 
-    fun testString(word: String): Boolean{
-        return encoder.testString(word)
+    fun testString(context: Context, word: String): Boolean{
+        return encoder.testString(context, word)
     }
 
     fun getHint(context: Context):String{

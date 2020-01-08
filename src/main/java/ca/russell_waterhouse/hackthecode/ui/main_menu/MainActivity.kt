@@ -9,9 +9,13 @@ import ca.russell_waterhouse.hackthecode.ui.level.LevelActivity
 
 class MainActivity : AppCompatActivity(),
     MainMenuFragment.OnMainMenuFragmentInteractionListener,
-    LevelSelectFragment.OnLevelSelectionFragmentInteractionListener {
+    LevelSelectFragment.OnLevelSelectionFragmentInteractionListener,
+    AboutAppFragment.OnAboutAppFragmentInteractionListener,
+    InstructionsFragment.OnInstructionsFragmentInteractionListener {
     private val mainMenuTAG = "MAIN_MENU"
     private val levelSelectTAG = "SELECT_LEVEL"
+    private val instructionsTAG = "INSTRUCTIONS"
+    private val aboutAppTAG = "ABOUT_APP"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +24,19 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun aboutAppButtonPressed() {
-        Toast.makeText(this, "about app button pressed", Toast.LENGTH_SHORT).show()
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val mainMenuFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
+        if (mainMenuFragment != null){
+            supportFragmentManager.beginTransaction().hide(mainMenuFragment)
+                .add(R.id.main_container, AboutAppFragment.newInstance()).commit()
+        }
     }
 
     override fun instructionsButtonPressed() {
-        Toast.makeText(this, "instructions button pressed", Toast.LENGTH_SHORT).show()
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val mainMenuFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
+        if (mainMenuFragment != null){
+            supportFragmentManager.beginTransaction().hide(mainMenuFragment)
+                .add(R.id.main_container, InstructionsFragment.newInstance()).commit()
+        }
     }
 
     override fun levelSelectButtonPressed() {
@@ -42,7 +52,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun levelSelected(level: Int) {
-        val levelIntent = LevelActivity.getIntent(this, level)
+        val levelIntent = LevelActivity.getIntent(applicationContext, level)
         startActivity(levelIntent)
     }
 }

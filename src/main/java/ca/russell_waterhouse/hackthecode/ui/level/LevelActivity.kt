@@ -13,9 +13,10 @@ private const val levelKEY = "level_to_load"
 
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
     private val levelFragmentTAG = "Level Fragment"
-    private val model = Model(application)
+    private lateinit var model: Model
 
     companion object {
+        @JvmStatic
         fun getIntent(context: Context, level: Int): Intent{
             val intent = Intent(context, LevelActivity::class.java)
             intent.putExtra(levelKEY, level)
@@ -26,6 +27,9 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
+        if (!::model.isInitialized){
+            model = Model(application)
+        }
         val currentLevel = intent.getIntExtra(levelKEY, 1)
         model.setLevel(currentLevel)
         val fragManager = this.supportFragmentManager
@@ -33,12 +37,12 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
             LevelFragment.newInstance("Translate this sentence", "tr1nsl1t2 th3s s2nt2nc2"),
             levelFragmentTAG).commit()
         model.getLiveDataWords().observe(this, Observer {
-                listOfWords -> TODO("need to pass this to the fragment but haven't built the method of the fragment to receive this")
+                listOfWords -> //TODO("need to pass this to the fragment but haven't built the method of the fragment to receive this")
         })
     }
 
     override fun testString(string: String){
-        val result = model.testString(string)
+        val result = model.testString(this, string)
         if (result){
             val sharedPreferences = getSharedPreferences(getString(R.string.preferences_key), Context.MODE_PRIVATE)
             val currentLevel = model.getLevel()

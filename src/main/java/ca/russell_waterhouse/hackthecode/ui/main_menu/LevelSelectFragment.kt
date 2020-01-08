@@ -48,6 +48,7 @@ class LevelSelectFragment : Fragment() {
         while(i < levels.childCount){
             val levelButton = levels.getChildAt(i)
             levelButton.setOnClickListener{
+//                TODO: This always passes 8 or 1 (???) as a parameter to the method below. fix that
                 listenerLevelSelection?.levelSelected(i)
             }
             i++
