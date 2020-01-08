@@ -19,7 +19,6 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         fun getIntent(context: Context, level: Int): Intent{
             val intent = Intent(context, LevelActivity::class.java)
             intent.putExtra(levelKEY, level)
-//            TODO: get the level number out of the intent
             return intent
         }
     }
@@ -27,6 +26,8 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
+        val currentLevel = intent.getIntExtra(levelKEY, 1)
+        model.setLevel(currentLevel)
         val fragManager = this.supportFragmentManager
         fragManager.beginTransaction().add(R.id.level_container,
             LevelFragment.newInstance("Translate this sentence", "tr1nsl1t2 th3s s2nt2nc2"),
