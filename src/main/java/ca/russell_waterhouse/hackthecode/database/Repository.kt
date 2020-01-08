@@ -9,7 +9,7 @@ class Repository(private val wordDAO: WordDAO) {
         return wordDAO.getWordsForLevel(level)
     }
 
-    fun insertWord(entity: Entity){
-        TODO("need more time to get concurrency correct on this")
+    suspend fun insertWord(entity: Entity){
+        wordDAO.insertWord(entity)
     }
 }

@@ -1,6 +1,8 @@
 package ca.russell_waterhouse.hackthecode.model.encoding_objects
 
 import android.content.Context
+import ca.russell_waterhouse.hackthecode.R
+import java.lang.StringBuilder
 
 class EncoderLevel1: Encoder {
 
@@ -9,14 +11,33 @@ class EncoderLevel1: Encoder {
     }
 
     override fun encode(word: String): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val encodedWord = StringBuilder()
+        for (letter in word){
+            when(letter){
+                'a' -> encodedWord.append('e')
+                'e' -> encodedWord.append('i')
+                'i' -> encodedWord.append('o')
+                'o' -> encodedWord.append('u')
+                'u' -> encodedWord.append('a')
+                'A' -> encodedWord.append('E')
+                'E' -> encodedWord.append('I')
+                'I' -> encodedWord.append('O')
+                'O' -> encodedWord.append('U')
+                'U' -> encodedWord.append('A')
+            }
+        }
+        return encodedWord.toString()
     }
 
-    override fun testString(word: String): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun testString(context: Context, word: String): Boolean {
+        return word == context.getString(R.string.level_1_decoded)
     }
 
     override fun getHint(context: Context): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return context.getString(R.string.level_1_hint)
+    }
+
+    override fun getLevelWord(context: Context): String {
+        return context.getString(R.string.level_1_encoded)
     }
 }
