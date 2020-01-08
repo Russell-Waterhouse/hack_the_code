@@ -5,12 +5,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
+import ca.russell_waterhouse.hackthecode.model.Model
 
 private const val levelKEY = "level_to_load"
 
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
     private val levelFragmentTAG = "Level Fragment"
+    private val model = Model(application)
 
     companion object {
         fun getIntent(context: Context, level: Int): Intent{
@@ -28,20 +31,36 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         fragManager.beginTransaction().add(R.id.level_container,
             LevelFragment.newInstance("Translate this sentence", "tr1nsl1t2 th3s s2nt2nc2"),
             levelFragmentTAG).commit()
+        model.getLiveDataWords().observe(this, Observer {
+                listOfWords -> TODO("need to pass this to the fragment but haven't built the method of the fragment to receive this")
+        })
     }
 
     override fun testString(string: String){
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
-//        TODO: Finish function
+        val result = model.testString(string)
+        if (result){
+            val sharedPreferences = getSharedPreferences(getString(R.string.preferences_key), Context.MODE_PRIVATE)
+            val currentLevel = model.getLevel()
+            var currentMaxLevel = sharedPreferences.getInt(getString(R.string.maximum_level_key), 1)
+            if (currentLevel == currentMaxLevel){
+                currentMaxLevel++
+                with(sharedPreferences.edit()){
+                    putInt(getString(R.string.maximum_level_key), currentMaxLevel)
+                    commit()
+                }
+            }
+        }
+        else{
+            Toast.makeText(this, R.string.try_again, Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun hintRequested(){
-        Toast.makeText(this, "hint requested", Toast.LENGTH_LONG).show()
-//        TODO: finish function
+        val hint = model.getHint(this)
+        TODO("No place yet built to display hints")
     }
 
     override fun encodeString(string: String){
-//        TODO: finish function
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+        model.encodeWord(string)
     }
 }

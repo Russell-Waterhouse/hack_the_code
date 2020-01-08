@@ -1,6 +1,6 @@
 package ca.russell_waterhouse.hackthecode.ui.main_menu
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,9 +30,14 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun levelSelectButtonPressed() {
-        val currentFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
-        if (currentFragment != null) {
-            supportFragmentManager.beginTransaction().hide(currentFragment).add(R.id.main_container, LevelSelectFragment.newInstance(1), levelSelectTAG).commit()
+        val mainMenuFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
+        val preferencesFileKey= getString(R.string.preferences_key)
+        val preferences = getSharedPreferences(preferencesFileKey, Context.MODE_PRIVATE)
+        val maxLevelKey = getString(R.string.maximum_level_key)
+        val maxLevel = preferences.getInt(maxLevelKey, 1)
+        if (mainMenuFragment != null) {
+            supportFragmentManager.beginTransaction().hide(mainMenuFragment)
+                .add(R.id.main_container, LevelSelectFragment.newInstance(maxLevel), levelSelectTAG).commit()
         }
     }
 
@@ -40,6 +45,4 @@ class MainActivity : AppCompatActivity(),
         val levelIntent = LevelActivity.getIntent(this, level)
         startActivity(levelIntent)
     }
-
-
 }

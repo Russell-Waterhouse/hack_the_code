@@ -1,7 +1,15 @@
 package ca.russell_waterhouse.hackthecode.database
 
-import android.content.Context
+import androidx.lifecycle.LiveData
+
 
 class Repository(private val wordDAO: WordDAO) {
-//    TODO: Implement
+
+    fun getWordsForLevel(level: Int):LiveData<List<Entity>>{
+        return wordDAO.getWordsForLevel(level)
+    }
+
+    fun insertWord(entity: Entity){
+        TODO("need more time to get concurrency correct on this")
+    }
 }
