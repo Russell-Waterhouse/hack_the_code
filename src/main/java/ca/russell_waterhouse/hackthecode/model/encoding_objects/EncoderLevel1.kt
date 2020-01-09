@@ -24,6 +24,7 @@ class EncoderLevel1: Encoder {
                 'I' -> encodedWord.append('O')
                 'O' -> encodedWord.append('U')
                 'U' -> encodedWord.append('A')
+                else -> encodedWord.append(letter)
             }
         }
         return encodedWord.toString()
