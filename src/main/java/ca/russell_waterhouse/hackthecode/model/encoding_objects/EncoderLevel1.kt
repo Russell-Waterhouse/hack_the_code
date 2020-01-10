@@ -31,7 +31,7 @@ class EncoderLevel1: Encoder {
     }
 
     override fun testString(context: Context, word: String): Boolean {
-        return word == context.getString(R.string.level_1_decoded)
+        return word.trim() == context.getString(R.string.level_1_decoded)
     }
 
     override fun getHint(context: Context): String {

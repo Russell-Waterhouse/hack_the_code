@@ -41,9 +41,12 @@ class EncoderLevel1Test {
         val encoder = EncoderLevel1()
 //        test it works as expected standard
         val expectedCorrectInput = context.getString(R.string.level_1_decoded)
-        assert(encoder.testString(context, expectedCorrectInput))
+        assertTrue(encoder.testString(context, expectedCorrectInput))
         assertFalse(encoder.testString(context, "Incorrect String"))
-//      TODO:  test it works as expected with surrounding whitespace
+//        test it works with surrounding whitespace
+        var correctExpressionWithWhitespace = context.getString(R.string.level_1_decoded)
+        correctExpressionWithWhitespace = " $correctExpressionWithWhitespace "
+        assertTrue(encoder.testString(context, correctExpressionWithWhitespace))
     }
 
     @Test
