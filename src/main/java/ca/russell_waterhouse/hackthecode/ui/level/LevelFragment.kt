@@ -8,7 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
+import ca.russell_waterhouse.hackthecode.database.Entity
+import ca.russell_waterhouse.hackthecode.model.Model
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -82,6 +85,9 @@ class LevelFragment : Fragment() {
         super.onAttach(context)
         if (context is OnLevelFragmentInteractionListener) {
             listenerLevel = context
+            listenerLevel?.getModel()?.getLiveDataWords()?.observe(this, Observer { newWordList ->
+                updateListOfWords(newWordList)
+            })
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
@@ -92,6 +98,9 @@ class LevelFragment : Fragment() {
         listenerLevel = null
     }
 
+    private fun updateListOfWords(newWords: List<Entity>){
+        TODO("Method not yet implemented")
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -107,6 +116,7 @@ class LevelFragment : Fragment() {
         fun testString(string: String)
         fun encodeString(string: String)
         fun hintRequested()
+        fun getModel(): Model
     }
 
     companion object {

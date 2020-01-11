@@ -38,9 +38,6 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         fragManager.beginTransaction().add(R.id.level_container,
             LevelFragment.newInstance("Translate this sentence", "tr1nsl1t2 th3s s2nt2nc2"),
             levelFragmentTAG).commit()
-        model.getLiveDataWords().observe(this, Observer {
-                listOfWords -> //TODO("need to pass this to the fragment but haven't built the method of the fragment to receive this")
-        })
     }
 
     override fun testString(string: String){
@@ -64,12 +61,16 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
 
     override fun hintRequested(){
         val hint = model.getHint(this)
-        TODO("No place yet built to display hints")
+        Toast.makeText(this, hint, Toast.LENGTH_LONG).show()
     }
 
     override fun encodeString(string: String){
         GlobalScope.launch {
             model.encodeWord(string)
         }
+    }
+
+    override fun getModel(): Model {
+        return model
     }
 }

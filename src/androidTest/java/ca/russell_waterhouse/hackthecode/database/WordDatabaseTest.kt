@@ -18,7 +18,6 @@ import kotlin.collections.mutableListOf as mutableListOf1
 
 class WordDatabaseTest {
 
-
     private lateinit var db : WordDatabase
     private  lateinit var wordDAO: WordDAO
 

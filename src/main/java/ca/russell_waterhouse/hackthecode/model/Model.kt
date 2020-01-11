@@ -47,5 +47,4 @@ class Model (application: Application) {
     fun getHint(context: Context):String{
         return encoder.getHint(context)
     }
-
 }
