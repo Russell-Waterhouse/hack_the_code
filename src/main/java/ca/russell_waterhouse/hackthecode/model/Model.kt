@@ -8,6 +8,9 @@ import ca.russell_waterhouse.hackthecode.database.Repository
 import ca.russell_waterhouse.hackthecode.database.WordDatabase
 import ca.russell_waterhouse.hackthecode.model.encoding_objects.Encoder
 import ca.russell_waterhouse.hackthecode.model.encoding_objects.EncoderFactory
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class Model (application: Application) {
 
@@ -18,8 +21,10 @@ class Model (application: Application) {
     private val repository = Repository(wordDao)
 
 
-    fun encodeWord(word: String): String{
-        return encoder.encode(word)
+    suspend fun encodeWord(word: String){
+        val encodedWord = encoder.encode(word)
+        val entity = Entity(currentLevel, word, encodedWord)
+        repository.insertWord(entity)
     }
 
     fun setLevel(level: Int){

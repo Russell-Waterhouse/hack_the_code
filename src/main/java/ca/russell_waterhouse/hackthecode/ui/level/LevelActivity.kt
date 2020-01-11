@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.model.Model
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 private const val levelKEY = "level_to_load"
 
@@ -66,6 +68,8 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun encodeString(string: String){
-        model.encodeWord(string)
+        GlobalScope.launch {
+            model.encodeWord(string)
+        }
     }
 }
