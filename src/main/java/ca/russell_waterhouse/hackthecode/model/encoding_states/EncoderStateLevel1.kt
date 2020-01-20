@@ -1,10 +1,10 @@
-package ca.russell_waterhouse.hackthecode.model.encoding_objects
+package ca.russell_waterhouse.hackthecode.model.encoding_states
 
 import android.content.Context
 import ca.russell_waterhouse.hackthecode.R
 import java.lang.StringBuilder
 
-class EncoderLevel1: Encoder {
+class EncoderStateLevel1: EncoderState() {
 
     override fun getLevel(): Int {
         return 1
@@ -28,17 +28,5 @@ class EncoderLevel1: Encoder {
             }
         }
         return encodedWord.toString()
-    }
-
-    override fun testString(context: Context, word: String): Boolean {
-        return word.trim() == context.getString(R.string.level_1_decoded)
-    }
-
-    override fun getHint(context: Context): String {
-        return context.getString(R.string.level_1_hint)
-    }
-
-    override fun getLevelWord(context: Context): String {
-        return context.getString(R.string.level_1_encoded)
     }
 }

@@ -1,4 +1,4 @@
-package ca.russell_waterhouse.hackthecode.model.encoding_objects
+package ca.russell_waterhouse.hackthecode.model.encoding_states
 
 import android.content.Context
 import androidx.test.platform.app.InstrumentationRegistry
@@ -7,7 +7,7 @@ import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Before
 
-class EncoderLevel1Test {
+class EncoderStateLevel1Test {
 
     private lateinit var context: Context
 
@@ -18,13 +18,13 @@ class EncoderLevel1Test {
 
     @Test
     fun getLevel() {
-        val encoder = EncoderLevel1()
+        val encoder = EncoderStateLevel1()
         assertEquals(1, encoder.getLevel())
     }
 
     @Test
     fun encode() {
-        val encoder = EncoderLevel1()
+        val encoder = EncoderStateLevel1()
 
 //        test it works as expected for regular input
         assertEquals("Thos os rigaler onpat thet wi cen Ixpict", encoder.encode("This is regular input that we can Expect"))
@@ -38,21 +38,21 @@ class EncoderLevel1Test {
 
     @Test
     fun testString() {
-        val encoder = EncoderLevel1()
+        val encoder = EncoderStateLevel1()
 //        test it works as expected standard
-        val expectedCorrectInput = context.getString(R.string.level_1_decoded)
+        val expectedCorrectInput = context.resources.getStringArray(R.array.decoded_level_words)[0]
         assertTrue(encoder.testString(context, expectedCorrectInput))
         assertFalse(encoder.testString(context, "Incorrect String"))
 //        test it works with surrounding whitespace
-        var correctExpressionWithWhitespace = context.getString(R.string.level_1_decoded)
+        var correctExpressionWithWhitespace = context.resources.getStringArray(R.array.decoded_level_words)[0]
         correctExpressionWithWhitespace = " $correctExpressionWithWhitespace "
         assertTrue(encoder.testString(context, correctExpressionWithWhitespace))
     }
 
     @Test
     fun getHint() {
-        val encoder = EncoderLevel1()
-        val expectedHint = context.getString(R.string.level_1_hint)
+        val encoder = EncoderStateLevel1()
+        val expectedHint = context.resources.getStringArray(R.array.hint_array)[0]
 //        test it returns the correct hint
         assertEquals(expectedHint, encoder.getHint(context))
     }
@@ -60,8 +60,8 @@ class EncoderLevel1Test {
 
     @Test
     fun getLevelWord() {
-        val encoder = EncoderLevel1()
-        val expectedWord = context.getString(R.string.level_1_encoded)
+        val encoder = EncoderStateLevel1()
+        val expectedWord = context.resources.getStringArray(R.array.encoded_level_words)[0]
         assertEquals(expectedWord, encoder.getLevelWord(context))
     }
 }

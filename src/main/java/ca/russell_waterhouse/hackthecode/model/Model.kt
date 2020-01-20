@@ -6,30 +6,27 @@ import androidx.lifecycle.LiveData
 import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.database.Repository
 import ca.russell_waterhouse.hackthecode.database.WordDatabase
-import ca.russell_waterhouse.hackthecode.model.encoding_objects.Encoder
-import ca.russell_waterhouse.hackthecode.model.encoding_objects.EncoderFactory
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderState
+import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderFactory
 
 class Model (application: Application) {
 
     private var currentLevel = 1
     private val factory = EncoderFactory()
-    private var encoder: Encoder = factory.getEncoder(currentLevel)
+    private var encoderState: EncoderState = factory.getEncoder(currentLevel)
     private val wordDao = WordDatabase.getDatabaseInstance(application).wordDAO()
     private val repository = Repository(wordDao)
 
 
     suspend fun encodeWord(word: String){
-        val encodedWord = encoder.encode(word)
+        val encodedWord = encoderState.encode(word)
         val entity = Entity(currentLevel, word, encodedWord)
         repository.insertWord(entity)
     }
 
     fun setLevel(level: Int){
         currentLevel = level
-        encoder = factory.getEncoder(currentLevel)
+        encoderState = factory.getEncoder(currentLevel)
     }
 
     fun getLevel(): Int{
@@ -41,10 +38,10 @@ class Model (application: Application) {
     }
 
     fun testString(context: Context, word: String): Boolean{
-        return encoder.testString(context, word)
+        return encoderState.testString(context, word)
     }
 
     fun getHint(context: Context):String{
-        return encoder.getHint(context)
+        return encoderState.getHint(context)
     }
 }
