@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.model.Model
 import kotlinx.coroutines.GlobalScope

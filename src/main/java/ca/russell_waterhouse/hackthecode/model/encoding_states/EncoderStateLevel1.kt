@@ -1,9 +1,5 @@
 package ca.russell_waterhouse.hackthecode.model.encoding_states
 
-import android.content.Context
-import ca.russell_waterhouse.hackthecode.R
-import java.lang.StringBuilder
-
 class EncoderStateLevel1: EncoderState() {
 
     override fun getLevel(): Int {

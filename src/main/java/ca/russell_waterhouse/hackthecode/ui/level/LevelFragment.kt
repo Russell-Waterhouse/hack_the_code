@@ -50,7 +50,7 @@ class LevelFragment : Fragment() {
     }
 
     private fun initializeViews(parent: View){
-        val encodedTV = parent.findViewById<TextView>(R.id.encoded_textview)
+        val encodedTV = parent.findViewById<TextView>(R.id.encoded_text_view)
         encodedTV.text = encodedString
         val hintButton = parent.findViewById<ExtendedFloatingActionButton>(R.id.hint_button)
         hintButton.setOnClickListener{

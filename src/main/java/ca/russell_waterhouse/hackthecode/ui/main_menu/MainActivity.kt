@@ -2,7 +2,6 @@ package ca.russell_waterhouse.hackthecode.ui.main_menu
 
 import android.content.Context
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.ui.level.LevelActivity
