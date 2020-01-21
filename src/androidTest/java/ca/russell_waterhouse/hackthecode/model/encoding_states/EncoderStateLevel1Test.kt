@@ -3,16 +3,16 @@ package ca.russell_waterhouse.hackthecode.model.encoding_states
 import android.content.Context
 import androidx.test.platform.app.InstrumentationRegistry
 import ca.russell_waterhouse.hackthecode.R
-import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Test
 
 class EncoderStateLevel1Test {
 
     private lateinit var context: Context
 
     @Before
-    fun initContext(){
+    fun setup(){
         context= InstrumentationRegistry.getInstrumentation().targetContext
     }
 
