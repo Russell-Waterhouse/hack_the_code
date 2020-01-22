@@ -3,9 +3,9 @@
     <string-array name="hint_array">
         <item>Only the vowels change in this code</item>
         <item>Try looking at this code in a mirror</item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Watch what happens to individual letters</item>
+        <item>Watch what happens to consonant-vowel pairs</item>
+        <item>The first step in this code is to reverse the input</item>
         <item></item>
         <item></item>
         <item></item>
