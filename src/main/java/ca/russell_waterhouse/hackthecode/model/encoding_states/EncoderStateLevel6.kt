@@ -6,6 +6,20 @@ class EncoderStateLevel6: EncoderState() {
     }
 
     override fun encode(word: String): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val stringBuilder = StringBuilder()
+        for (letter: Char in word) {
+            when {
+                letter.isLetter() -> {
+                    stringBuilder.append((letter.toInt() - 'A'.toInt() + 1).toString() + ',')
+                }
+                letter.isDigit() -> {
+                    stringBuilder.append("<$letter>")
+                }
+                else -> {
+                    stringBuilder.append(letter)
+                }
+            }
+        }
+        return stringBuilder.toString()
     }
 }
