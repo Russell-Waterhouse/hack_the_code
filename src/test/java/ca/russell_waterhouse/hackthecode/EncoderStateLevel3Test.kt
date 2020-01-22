@@ -1,29 +1,22 @@
-package ca.russell_waterhouse.hackthecode.model.encoding_states
+package ca.russell_waterhouse.hackthecode
 
-import android.content.Context
-import androidx.test.platform.app.InstrumentationRegistry
+import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderStateLevel3
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 
 class EncoderStateLevel3Test {
 
-    private lateinit var context: Context
-
-    @Before
-    fun setUp() {
-        context= InstrumentationRegistry.getInstrumentation().targetContext
-    }
-
     @Test
     fun getLevel() {
-        val encoderState = EncoderStateLevel3()
+        val encoderState =
+            EncoderStateLevel3()
         assertEquals(3, encoderState.getLevel())
     }
 
     @Test
     fun encode() {
-        val encoderState = EncoderStateLevel3()
+        val encoderState =
+            EncoderStateLevel3()
         assertEquals("A", encoderState.encode("Z"))
         assertEquals("a", encoderState.encode("z"))
         assertEquals("BCD", encoderState.encode("ABC"))
