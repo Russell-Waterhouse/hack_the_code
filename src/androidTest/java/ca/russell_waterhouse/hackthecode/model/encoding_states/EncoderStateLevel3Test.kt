@@ -29,6 +29,5 @@ class EncoderStateLevel3Test {
         assertEquals("BCD", encoderState.encode("ABC"))
         assertEquals("bcd", encoderState.encode("abc"))
         assertEquals("BCD EFG.?HIJ !@#$%^&*()1234567890klm", encoderState.encode("ABC DEF.?GHI !@#$%^&*()1234567890jkl"))
-
     }
 }
