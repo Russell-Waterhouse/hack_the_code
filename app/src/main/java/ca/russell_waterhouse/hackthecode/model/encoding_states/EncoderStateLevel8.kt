@@ -8,10 +8,7 @@ class EncoderStateLevel8: EncoderState() {
     override fun encode(word: String): String {
         var previousLetter = word[0]
         var currentLetter= word[1]
-        for ()
-        if () {
-            if (! previousLetter.)
-        }
+        return "null"
     }
 
     private fun numberFromLetter(letter: Char): Int{
