@@ -9,11 +9,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c01dfd-07aa-43e1-8934-bc141bfd06e4" name="Default Changelist" comment="reconfigured version control. Removed uncompleted code">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="10c01dfd-07aa-43e1-8934-bc141bfd06e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8Test.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,20 +45,29 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/ui/main_menu/LevelSelectFragment.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_level_select.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+            <state relative-caret-position="274">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_level_select.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8Test.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="272">
+              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -111,8 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_objects/EncoderFactory.kt" />
-        <option value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_objects/EncoderLevel1Test.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_objects/EncoderLevel_1.kt" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/ca/russell_waterhouse/hackthecode/model/encoding_objects/EncoderLevel1Test.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_objects/EncoderLevel1Test.kt" />
@@ -160,8 +165,10 @@
         <option value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel6Test.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel6.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel6Test.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8Test.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt" />
+        <option value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8Test.kt" />
       </list>
     </option>
   </component>
@@ -205,23 +212,15 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="hackthecode" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Hack The Code" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="hackthecode" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="level" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hack The Code" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="hackthecode" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="main_menu" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="encoding_states" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -251,7 +250,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../priorityTodo/build.gradle" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -289,23 +288,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.EncoderStateLevel6Test.encode">
-    <configuration name="EncoderStateLevel5Test" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.russell_waterhouse.hackthecode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.russell_waterhouse.hackthecode" />
-      <option name="MAIN_CLASS_NAME" value="ca.russell_waterhouse.hackthecode.EncoderStateLevel5Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Android JUnit.EncoderStateLevel8Test.encode">
     <configuration name="EncoderStateLevel6Test" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -333,6 +316,40 @@
       <option name="PACKAGE_NAME" value="ca.russell_waterhouse.hackthecode.model.encoding_states" />
       <option name="MAIN_CLASS_NAME" value="ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderStateLevel6Test" />
       <option name="METHOD_NAME" value="encode" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EncoderStateLevel8Test.encode" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.russell_waterhouse.hackthecode.model.encoding_states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.russell_waterhouse.hackthecode.model.encoding_states" />
+      <option name="MAIN_CLASS_NAME" value="ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderStateLevel8Test" />
+      <option name="METHOD_NAME" value="encode" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EncoderStateLevel8Test.getLevel" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.russell_waterhouse.hackthecode.model.encoding_states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.russell_waterhouse.hackthecode.model.encoding_states" />
+      <option name="MAIN_CLASS_NAME" value="ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderStateLevel8Test" />
+      <option name="METHOD_NAME" value="getLevel" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -408,62 +425,13 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests in 'ca.russell_waterhouse.hackthecode'" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <option name="TESTING_TYPE" value="1" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="androidx.test.runner.AndroidJUnitRunner" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="ca.russell_waterhouse.hackthecode" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.EncoderStateLevel8Test.encode" />
+        <item itemvalue="Android JUnit.EncoderStateLevel8Test.getLevel" />
         <item itemvalue="Android JUnit.EncoderStateLevel6Test.encode" />
         <item itemvalue="Android JUnit.EncoderStateLevel6Test" />
         <item itemvalue="Android JUnit.hackthecode in app" />
-        <item itemvalue="Android JUnit.EncoderStateLevel5Test" />
-        <item itemvalue="Android Instrumented Tests.Tests in 'ca.russell_waterhouse.hackthecode'" />
       </list>
     </recent_temporary>
   </component>
@@ -671,24 +639,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 14h 58m 13s.xml">
-      <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 14h 59m 50s.xml">
-      <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 15h 00m 05s.xml">
-      <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 15h 02m 24s.xml">
-      <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 15h 03m 23s.xml">
-      <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 15h 03m 43s.xml">
-      <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
-    </history-entry>
     <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 15h 03m 51s.xml">
       <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
     </history-entry>
@@ -700,6 +650,24 @@
     </history-entry>
     <history-entry file="EncoderStateLevel6Test_encode - 2020.01.22 at 15h 06m 07s.xml">
       <configuration name="EncoderStateLevel6Test.encode" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="EncoderStateLevel8Test_getLevel - 2020.01.24 at 09h 56m 59s.xml">
+      <configuration name="EncoderStateLevel8Test.getLevel" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="EncoderStateLevel8Test_encode - 2020.01.24 at 09h 57m 52s.xml">
+      <configuration name="EncoderStateLevel8Test.encode" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="EncoderStateLevel8Test_encode - 2020.01.24 at 10h 01m 33s.xml">
+      <configuration name="EncoderStateLevel8Test.encode" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="EncoderStateLevel8Test_encode - 2020.01.24 at 10h 04m 33s.xml">
+      <configuration name="EncoderStateLevel8Test.encode" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="EncoderStateLevel8Test_encode - 2020.01.24 at 10h 09m 06s.xml">
+      <configuration name="EncoderStateLevel8Test.encode" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="EncoderStateLevel8Test_encode - 2020.01.24 at 10h 09m 17s.xml">
+      <configuration name="EncoderStateLevel8Test.encode" configurationId="AndroidJUnit" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="2">
@@ -713,6 +681,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50398403" side_tool="true" weight="0.22684564" />
       <window_info id="Captures" order="1" sideWeight="0.50107294" side_tool="true" weight="0.24570815" />
@@ -730,18 +699,18 @@
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5005365" side_tool="true" weight="0.32939914" />
       <window_info anchor="bottom" id="Build" order="5" sideWeight="0.49946353" weight="0.32573727" />
       <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.3427762" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.33261803" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.34048256" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.3324397" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3297587" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32707775" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32707775" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32939914" />
-      <window_info anchor="right" id="Assistant" weight="0.3295302" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" weight="0.3299356" />
+      <window_info anchor="right" id="Assistant" order="6" weight="0.3295302" />
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" sideWeight="0.50107294" side_tool="true" weight="0.24570815" />
@@ -860,28 +829,16 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt</url>
+          <line>10</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/ui/main_menu/MainMenuFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/security/InvalidParameterException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
-          <folding>
-            <element signature="e#1767#1768#0" expanded="true" />
-            <element signature="e#1790#1791#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_objects/EncoderLevel1Test.kt" />
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/content/Context.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1041,13 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.61/fe3b9d48f4c3947639b6b1760213c1b79281383e/kotlin-stdlib-common-1.3.61-sources.jar!/generated/_Arrays.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1377" column="21" selection-start-line="1377" selection-start-column="21" selection-end-line="1377" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel1.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -1193,13 +1143,6 @@
       </provider>
       <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_level.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -1226,10 +1169,38 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_level_select.xml">
-      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.61/72876c4e34feff9bf8d93d0b100e71ce6f5f8244/kotlin-stdlib-1.3.61-sources.jar!/kotlin/Library.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="159">
+          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.61/fe3b9d48f4c3947639b6b1760213c1b79281383e/kotlin-stdlib-common-1.3.61-sources.jar!/generated/_Arrays.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="4802" column="20" selection-start-line="4802" selection-start-column="20" selection-end-line="4802" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ca/russell_waterhouse/hackthecode/model/encoding_states/EncoderStateLevel8Test.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
         </state>
       </provider>
     </entry>
