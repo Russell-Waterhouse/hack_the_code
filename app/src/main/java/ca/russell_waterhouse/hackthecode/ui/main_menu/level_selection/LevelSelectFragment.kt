@@ -1,13 +1,12 @@
-package ca.russell_waterhouse.hackthecode.ui.main_menu
+package ca.russell_waterhouse.hackthecode.ui.main_menu.level_selection
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.gridlayout.widget.GridLayout
-
+import android.widget.GridView
+import androidx.fragment.app.Fragment
 import ca.russell_waterhouse.hackthecode.R
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,23 +35,14 @@ class LevelSelectFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val levelSelection = inflater.inflate(R.layout.fragment_level_select, container, false)
-        initViews(levelSelection)
-        // Inflate the layout for this fragment
-        return levelSelection
-    }
-
-    private fun initViews(parent: View){
-        val levels = parent.findViewById<GridLayout>(R.id.level_grid)
-        var i = 0
-        while(i < levels.childCount){
-            val levelButton = levels.getChildAt(i)
-            levelButton.setOnClickListener{
-//                TODO: This always passes 8 or 1 (???) as a parameter to the method below. fix that
-                listenerLevelSelection?.levelSelected(i)
-            }
-            i++
+        val parent = inflater.inflate(R.layout.fragment_level_select, container, false)
+        val levels = parent.findViewById<GridView>(R.id.level_grid)
+        val tempContext = context
+        if (tempContext!= null){
+            levels.adapter = LevelListAdapter(tempContext, R.layout.grid_element)
         }
+        levels.numColumns = 4
+        return parent
     }
 
     override fun onAttach(context: Context) {
@@ -60,7 +50,7 @@ class LevelSelectFragment : Fragment() {
         if (context is OnLevelSelectionFragmentInteractionListener) {
             listenerLevelSelection = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
 

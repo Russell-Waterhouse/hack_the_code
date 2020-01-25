@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.ui.level.LevelActivity
+import ca.russell_waterhouse.hackthecode.ui.main_menu.level_selection.LevelSelectFragment
 
 class MainActivity : AppCompatActivity(),
     MainMenuFragment.OnMainMenuFragmentInteractionListener,
