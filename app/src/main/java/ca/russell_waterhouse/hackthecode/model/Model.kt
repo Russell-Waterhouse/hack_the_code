@@ -6,8 +6,8 @@ import androidx.lifecycle.LiveData
 import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.database.Repository
 import ca.russell_waterhouse.hackthecode.database.WordDatabase
-import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderState
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderFactory
+import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderState
 
 class Model (application: Application) {
 
@@ -22,6 +22,7 @@ class Model (application: Application) {
         val encodedWord = encoderState.encode(word)
         val entity = Entity(currentLevel, word, encodedWord)
         repository.insertWord(entity)
+        TODO("level 8 does not work with decimal inputs. Ensure that users do not type any numbers in to be encoded")
     }
 
     fun setLevel(level: Int){

@@ -99,7 +99,7 @@ class LevelFragment : Fragment() {
     }
 
     private fun updateListOfWords(newWords: List<Entity>){
-        TODO("Method not yet implemented")
+//        TODO("Method not yet implemented")
     }
     /**
      * This interface must be implemented by activities that contain this

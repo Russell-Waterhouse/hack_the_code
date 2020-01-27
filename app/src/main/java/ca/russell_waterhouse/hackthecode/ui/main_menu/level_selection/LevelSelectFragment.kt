@@ -35,14 +35,18 @@ class LevelSelectFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val parent = inflater.inflate(R.layout.fragment_level_select, container, false)
-        val levels = parent.findViewById<GridView>(R.id.level_grid)
+        val fragmentView = inflater.inflate(R.layout.fragment_level_select, container, false)
+        val levels = fragmentView.findViewById<GridView>(R.id.level_grid)
         val tempContext = context
         if (tempContext!= null){
             levels.adapter = LevelListAdapter(tempContext, R.layout.grid_element)
         }
         levels.numColumns = 4
-        return parent
+        levels.setOnItemClickListener { parent, view, position, id ->
+            val requestedLevel = position + 1
+            listenerLevelSelection?.levelSelected(requestedLevel)
+        }
+        return fragmentView
     }
 
     override fun onAttach(context: Context) {

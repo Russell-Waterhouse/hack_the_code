@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import ca.russell_waterhouse.hackthecode.R
 
 class LevelListAdapter(context: Context, private val resource: Int) : ArrayAdapter<Int>(context, resource) {
@@ -29,12 +28,8 @@ class LevelListAdapter(context: Context, private val resource: Int) : ArrayAdapt
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val inflater= context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val gridElement = inflater.inflate(resource, parent, false)
-        gridElement.tag = position+1
         val levelText = gridElement.findViewById<TextView>(R.id.grid_element_text)
         levelText.text = (position+1).toString()
-        gridElement.setOnClickListener{
-            Toast.makeText(context, gridElement.tag.toString(), Toast.LENGTH_LONG).show()
-        }
         return gridElement
     }
 
