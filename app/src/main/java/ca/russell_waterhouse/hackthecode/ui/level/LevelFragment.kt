@@ -30,6 +30,7 @@ class LevelFragment : Fragment() {
     private var decodedString: String? = null
     private var encodedString: String? = null
     private var listenerLevel: OnLevelFragmentInteractionListener? = null
+    private lateinit var guessTable: TableLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,28 +57,14 @@ class LevelFragment : Fragment() {
         hintButton.setOnClickListener{
             listenerLevel?.hintRequested()
         }
-        val encodeButton = parent.findViewById<Button>(R.id.encode_button)
-        val encodeET = parent.findViewById<EditText>(R.id.string_to_encode_edit_text)
-        encodeButton.setOnClickListener{
-            listenerLevel?.encodeString(encodeET.text.toString())
-            encodeET.setText(R.string.empty_string)
-        }
         val encodedTable = parent.findViewById<TableLayout>(R.id.encoded_table)
-        val row1 = TableRow(context)
-        val left = TextView(context)
-        left.text = R.string.example_sentence.toString()
-        left.gravity = Gravity.START
-        val right = TextView(context)
-        right.text = "2x1mpl2 s2nt2nc2"
-        right.gravity = Gravity.END
-        row1.addView(left)
-        row1.addView(right)
-        encodedTable.addView(row1)
+        guessTable = encodedTable
         val checkAnswerButton = parent.findViewById<Button>(R.id.check_answer)
-        val finalAnswerET = parent.findViewById<EditText>(R.id.final_answer)
+        val answerET = parent.findViewById<EditText>(R.id.final_answer)
         checkAnswerButton.setOnClickListener{
-            listenerLevel?.testString(finalAnswerET.text.toString())
-            finalAnswerET.setText(R.string.empty_string)
+            listenerLevel?.testString(answerET.text.toString())
+            listenerLevel?.encodeString(answerET.text.toString())
+            answerET.setText(R.string.empty_string)
         }
     }
 
@@ -89,7 +76,7 @@ class LevelFragment : Fragment() {
                 updateListOfWords(newWordList)
             })
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
 
@@ -99,7 +86,20 @@ class LevelFragment : Fragment() {
     }
 
     private fun updateListOfWords(newWords: List<Entity>){
-//        TODO("Method not yet implemented")
+        guessTable.removeAllViewsInLayout()
+        for (item in newWords){
+            val newRow = TableRow(context)
+            val left = TextView(context)
+            val right = TextView(context)
+            left.text = item.word
+            left.gravity = Gravity.START
+            right.text = item.encodedWordL
+            right.gravity = Gravity.END
+            newRow.addView(left)
+            newRow.addView(right)
+            guessTable.addView(newRow)
+        }
+
     }
     /**
      * This interface must be implemented by activities that contain this

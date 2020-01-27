@@ -13,8 +13,9 @@ import kotlinx.coroutines.launch
 private const val levelKEY = "level_to_load"
 
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
-    private val levelFragmentTAG = "Level Fragment"
+    private val LEVEL_FRAGMENT_TAG = "Level Fragment"
     private lateinit var model: Model
+    private lateinit var levelFragment: LevelFragment
 
     companion object {
         @JvmStatic
@@ -36,7 +37,7 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         val fragManager = this.supportFragmentManager
         fragManager.beginTransaction().add(R.id.level_container,
             LevelFragment.newInstance("Translate this sentence", "tr1nsl1t2 th3s s2nt2nc2"),
-            levelFragmentTAG).commit()
+            LEVEL_FRAGMENT_TAG).commit()
     }
 
     override fun testString(string: String){
