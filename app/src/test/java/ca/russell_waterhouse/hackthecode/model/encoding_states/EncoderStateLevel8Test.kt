@@ -15,6 +15,6 @@ class EncoderStateLevel8Test {
     fun encode() {
         val encoderState = EncoderStateLevel8()
         assertEquals("1,", encoderState.encode("A"))
-        TODO("Testing not yet completed")
+        assertEquals("19,49,33, ,19,2,31,50,", encoderState.encode("Brat Cat"))
     }
 }
