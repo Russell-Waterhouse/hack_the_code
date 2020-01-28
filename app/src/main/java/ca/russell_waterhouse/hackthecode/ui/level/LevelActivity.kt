@@ -3,8 +3,11 @@ package ca.russell_waterhouse.hackthecode.ui.level
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.model.Model
 import kotlinx.coroutines.GlobalScope
@@ -15,7 +18,6 @@ private const val levelKEY = "level_to_load"
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
     private val LEVEL_FRAGMENT_TAG = "Level Fragment"
     private lateinit var model: Model
-    private lateinit var levelFragment: LevelFragment
 
     companion object {
         @JvmStatic
@@ -29,15 +31,34 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
-        if (!::model.isInitialized){
-            model = Model(application)
-        }
+        model = Model(application)
         val currentLevel = intent.getIntExtra(levelKEY, 1)
         model.setLevel(currentLevel)
+        setupActionBar()
         val fragManager = this.supportFragmentManager
         fragManager.beginTransaction().add(R.id.level_container,
             LevelFragment.newInstance("Translate this sentence", "tr1nsl1t2 th3s s2nt2nc2"),
             LEVEL_FRAGMENT_TAG).commit()
+    }
+
+    private fun setupActionBar() {
+        val hintButton = findViewById<TextView>(R.id.hint_button)
+        hintButton.text = getString(R.string.hint)
+        hintButton.setTextColor(getColor(R.color.colorNeutral))
+        hintButton.gravity = Gravity.END
+        hintButton.setOnClickListener {
+            val hint = model.getHint(this)
+            Toast.makeText(this, hint, Toast.LENGTH_LONG).show()
+        }
+        val toolBar = findViewById<Toolbar>(R.id.toolbar)
+        toolBar.title = getString(R.string.empty_string)
+        val toolbarTitle = findViewById<TextView>(R.id.toolbar_title)
+        val level = model.getLevel()
+        toolbarTitle.text = getString(R.string.level_title, level)
+        setSupportActionBar(toolBar)
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
     override fun testString(string: String){

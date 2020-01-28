@@ -12,7 +12,6 @@ import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.model.Model
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_DECODED_STRING = "param1"
@@ -53,10 +52,6 @@ class LevelFragment : Fragment() {
     private fun initializeViews(parent: View){
         val encodedTV = parent.findViewById<TextView>(R.id.encoded_text_view)
         encodedTV.text = encodedString
-        val hintButton = parent.findViewById<ExtendedFloatingActionButton>(R.id.hint_button)
-        hintButton.setOnClickListener{
-            listenerLevel?.hintRequested()
-        }
         val encodedTable = parent.findViewById<TableLayout>(R.id.encoded_table)
         guessTable = encodedTable
         val checkAnswerButton = parent.findViewById<Button>(R.id.check_answer)

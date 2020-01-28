@@ -27,4 +27,5 @@
     <string name="maximum_level_key">LEVEL_KEY</string>
     <string name="try_again">Incorrect. Try again</string>
     <string name="guesses">Guesses</string>
+    <string name="level_title">Level %d</string>
 </resources>

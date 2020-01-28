@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ca.russell_waterhouse.hackthecode.ui.level.LevelActivity">
+        <activity
+            android:name="ca.russell_waterhouse.hackthecode.ui.level.LevelActivity"
+            android:parentActivityName=".ui.main_menu.MainActivity">
 
         </activity>
     </application>
