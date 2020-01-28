@@ -30,4 +30,30 @@
     <string name="level_title">Level %d</string>
     <string name="feedback_level_locked">That level is locked</string>
     <string name="feedback_level_complete">Correct!</string>
+<!--Open source strings-->
+    <string name="android_sdk">The android open source project</string>
+    <string name="android_sdk_url">https://source.android.com/</string>
+    <string name="room_library">Room Persistence Library</string>
+    <string name="room_url">https://developer.android.com/jetpack/androidx/releases/room</string>
+    <string name="lifecycle_library">Lifecycle Components</string>
+    <string name="lifecycle_library_url">https://developer.android.com/reference/androidx/lifecycle/package-summary.html</string>
+    <string name="espresso_library">Espresso Testing Library</string>
+    <string name="espresso_url">https://developer.android.com/training/testing/ui-testing/espresso-testing</string>
+    <string name="material_library">Material Design Library</string>
+    <string name="material_url">https://github.com/material-components/material-components-android</string>
+
+    <string name="about_the_development">Development</string>
+    <string name="about_open_source">Open Source Contributions</string>
+    <string name="title_activity_about_app">AboutAppActivity</string>
+    <string name="see_code">See the source code</string>
+    <string name="about_app_string">This app was created to help students plan what semester to take required courses so they complete their degree on time</string>
+    <string name="about_developer_string">This app was developed by Russell Waterhouse, A Software Engineering student at the University of Victoria</string>
+    <string name="about_code_string">If you are interested in this project, you can look at the source code by pressing the button below!</string>
+    <string name="link_to_code">https://github.com/Russell-Waterhouse/hack_the_code</string>
+    <string name="thank_open_source">The developer would like to thank the following Open Source contributions</string>
+    <string name="click_links_prompt">Tap on the button to find out more about each contribution that helped make this project possible</string>
+    <string name="content_description_launch_icon">Launch Icon for the app</string>
+    <string name="content_description_developer">A picture of the developer</string>
+
+
 </resources>

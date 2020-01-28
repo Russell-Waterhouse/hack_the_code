@@ -22,6 +22,8 @@
         <activity
             android:name=".ui.level.LevelActivity"
             android:parentActivityName=".ui.main_menu.MainActivity" />
+        <activity android:name=".ui.about_app.AboutAppActivity"
+            android:parentActivityName=".ui.main_menu.MainActivity"/>
     </application>
 
 </manifest>
