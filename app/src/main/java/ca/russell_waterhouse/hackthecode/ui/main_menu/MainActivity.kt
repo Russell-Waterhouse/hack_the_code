@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(),
         val mainMenuFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
         if (mainMenuFragment != null){
             supportFragmentManager.beginTransaction().hide(mainMenuFragment)
-                .add(R.id.main_container, AboutAppFragment.newInstance()).commit()
+                .add(R.id.main_container, AboutAppFragment.newInstance(), aboutAppTAG).commit()
         }
     }
 
@@ -32,12 +32,11 @@ class MainActivity : AppCompatActivity(),
         val mainMenuFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
         if (mainMenuFragment != null){
             supportFragmentManager.beginTransaction().hide(mainMenuFragment)
-                .add(R.id.main_container, InstructionsFragment.newInstance()).commit()
+                .add(R.id.main_container, InstructionsFragment.newInstance(), instructionsTAG).commit()
         }
     }
 
     override fun levelSelectButtonPressed() {
         startActivity(Intent(applicationContext, LevelSelectionActivity::class.java))
-//        finish()
     }
 }
