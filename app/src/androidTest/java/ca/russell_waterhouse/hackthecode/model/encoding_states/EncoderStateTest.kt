@@ -164,7 +164,7 @@ class EncoderStateTest {
         expectedWord = context.resources.getStringArray(R.array.encoded_level_words)[6]
         assertEquals(expectedWord, encoder.getLevelWord(context))
 
-        encoder= EncoderStateLevel7()
+        encoder= EncoderStateLevel8()
         expectedWord = context.resources.getStringArray(R.array.encoded_level_words)[7]
         assertEquals(expectedWord, encoder.getLevelWord(context))
     }

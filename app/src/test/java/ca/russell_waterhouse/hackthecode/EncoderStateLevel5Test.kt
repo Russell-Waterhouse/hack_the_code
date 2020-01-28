@@ -24,5 +24,6 @@ class EncoderStateLevel5Test {
         assertEquals("b", encoderState.encode("z"))
         assertEquals("fsux", encoderState.encode("word"))
         assertEquals(" tfsux imqovman", encoderState.encode("multiple words "))
+        assertEquals("metuqtof ihecseh e po lsug e vaq vup uF", encoderState.encode("Do not put a fork in a garbage disposal"))
     }
 }

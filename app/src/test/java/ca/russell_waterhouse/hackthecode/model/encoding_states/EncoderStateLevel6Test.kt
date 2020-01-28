@@ -20,5 +20,7 @@ class EncoderStateLevel6Test {
         assertEquals("52,40,41,51, 41,51, 33, 51,37,46,52,37,46,35,37,", encoderState.encode("this is a sentence"))
         assertEquals("<1><2><3><4><5><6>", encoderState.encode("123456"))
         assertEquals("<>?!@#$%^&*()_+-=", encoderState.encode("<>?!@#$%^&*()_+-="))
+        assertEquals("13,57, 48,50,41,46,52,37,50, 41,51, 52,50,57,41,46,39, 52,47, 43,41,44,44, 45,37,",
+            encoderState.encode("My printer is trying to kill me"))
     }
 }

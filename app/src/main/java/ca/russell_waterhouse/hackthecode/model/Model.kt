@@ -45,4 +45,8 @@ class Model (application: Application) {
     fun getHint(context: Context):String{
         return encoderState.getHint(context)
     }
+
+    fun getLevelWord(context: Context): String {
+        return encoderState.getLevelWord(context)
+    }
 }

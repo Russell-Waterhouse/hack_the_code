@@ -1,6 +1,5 @@
-package ca.russell_waterhouse.hackthecode
+package ca.russell_waterhouse.hackthecode.model.encoding_states
 
-import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderStateLevel1
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

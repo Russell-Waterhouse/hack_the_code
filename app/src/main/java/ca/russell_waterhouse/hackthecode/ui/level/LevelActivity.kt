@@ -37,7 +37,7 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         setupActionBar()
         val fragManager = this.supportFragmentManager
         fragManager.beginTransaction().add(R.id.level_container,
-            LevelFragment.newInstance("Translate this sentence", "tr1nsl1t2 th3s s2nt2nc2"),
+            LevelFragment.newInstance(model.getLevelWord(this)),
             LEVEL_FRAGMENT_TAG).commit()
     }
 

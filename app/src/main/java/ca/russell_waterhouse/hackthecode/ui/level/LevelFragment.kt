@@ -14,7 +14,6 @@ import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.model.Model
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_DECODED_STRING = "param1"
 private const val ARG_ENCODED_STRING = "param2"
 
 /**
@@ -26,7 +25,6 @@ private const val ARG_ENCODED_STRING = "param2"
  * create an instance of this fragment.
  */
 class LevelFragment : Fragment() {
-    private var decodedString: String? = null
     private var encodedString: String? = null
     private var listenerLevel: OnLevelFragmentInteractionListener? = null
     private lateinit var guessTable: TableLayout
@@ -34,7 +32,6 @@ class LevelFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            decodedString = it.getString(ARG_DECODED_STRING)
             encodedString = it.getString(ARG_ENCODED_STRING)
         }
     }
@@ -119,15 +116,13 @@ class LevelFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param decodedString Parameter 1.
          * @param encodedString Parameter 2.
          * @return A new instance of fragment LevelFragment.
          */
         @JvmStatic
-        fun newInstance(decodedString: String, encodedString: String) =
+        fun newInstance(encodedString: String) =
             LevelFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_DECODED_STRING, decodedString)
                     putString(ARG_ENCODED_STRING, encodedString)
                 }
             }
