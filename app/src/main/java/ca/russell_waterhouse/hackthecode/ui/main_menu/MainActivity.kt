@@ -1,19 +1,16 @@
 package ca.russell_waterhouse.hackthecode.ui.main_menu
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.R
-import ca.russell_waterhouse.hackthecode.ui.level.LevelActivity
-import ca.russell_waterhouse.hackthecode.ui.main_menu.level_selection.LevelSelectFragment
+import ca.russell_waterhouse.hackthecode.ui.level_selection.LevelSelectionActivity
 
 class MainActivity : AppCompatActivity(),
     MainMenuFragment.OnMainMenuFragmentInteractionListener,
-    LevelSelectFragment.OnLevelSelectionFragmentInteractionListener,
     AboutAppFragment.OnAboutAppFragmentInteractionListener,
     InstructionsFragment.OnInstructionsFragmentInteractionListener {
     private val mainMenuTAG = "MAIN_MENU"
-    private val levelSelectTAG = "SELECT_LEVEL"
     private val instructionsTAG = "INSTRUCTIONS"
     private val aboutAppTAG = "ABOUT_APP"
 
@@ -40,19 +37,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun levelSelectButtonPressed() {
-        val mainMenuFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
-        val preferencesFileKey= getString(R.string.preferences_key)
-        val preferences = getSharedPreferences(preferencesFileKey, Context.MODE_PRIVATE)
-        val maxLevelKey = getString(R.string.maximum_level_key)
-        val maxLevel = preferences.getInt(maxLevelKey, 1)
-        if (mainMenuFragment != null) {
-            supportFragmentManager.beginTransaction().hide(mainMenuFragment)
-                .add(R.id.main_container, LevelSelectFragment.newInstance(maxLevel), levelSelectTAG).commit()
-        }
-    }
-
-    override fun levelSelected(level: Int) {
-        val levelIntent = LevelActivity.getIntent(applicationContext, level)
-        startActivity(levelIntent)
+        startActivity(Intent(applicationContext, LevelSelectionActivity::class.java))
+//        finish()
     }
 }

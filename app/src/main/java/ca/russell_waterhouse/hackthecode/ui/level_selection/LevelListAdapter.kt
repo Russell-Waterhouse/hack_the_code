@@ -1,6 +1,7 @@
-package ca.russell_waterhouse.hackthecode.ui.main_menu.level_selection
+package ca.russell_waterhouse.hackthecode.ui.level_selection
 
 import android.content.Context
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import ca.russell_waterhouse.hackthecode.R
 
-class LevelListAdapter(context: Context, private val resource: Int) : ArrayAdapter<Int>(context, resource) {
+class LevelListAdapter(context: Context, private val resource: Int, private val maxUnlockedLevel: Int) : ArrayAdapter<Int>(context, resource) {
 
     private val count = 8
     private var levels: IntArray = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8)
@@ -30,6 +31,12 @@ class LevelListAdapter(context: Context, private val resource: Int) : ArrayAdapt
         val gridElement = inflater.inflate(resource, parent, false)
         val levelText = gridElement.findViewById<TextView>(R.id.grid_element_text)
         levelText.text = (position+1).toString()
+        levelText.gravity = Gravity.CENTER_VERTICAL
+        levelText.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+        levelText.layoutParams.height = 150
+        if (position + 1 > maxUnlockedLevel){
+            levelText.background = context.getDrawable(R.drawable.ic_lock_black_24dp)
+        }
         return gridElement
     }
 

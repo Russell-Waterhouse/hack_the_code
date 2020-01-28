@@ -1,4 +1,4 @@
-package ca.russell_waterhouse.hackthecode.ui.main_menu.level_selection
+package ca.russell_waterhouse.hackthecode.ui.level_selection
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ca.russell_waterhouse.hackthecode.R
 
@@ -39,12 +40,22 @@ class LevelSelectFragment : Fragment() {
         val levels = fragmentView.findViewById<GridView>(R.id.level_grid)
         val tempContext = context
         if (tempContext!= null){
-            levels.adapter = LevelListAdapter(tempContext, R.layout.grid_element)
+            levels.adapter =
+                LevelListAdapter(
+                    tempContext,
+                    R.layout.grid_element,
+                    currentLevel
+                )
         }
         levels.numColumns = 4
         levels.setOnItemClickListener { parent, view, position, id ->
             val requestedLevel = position + 1
-            listenerLevelSelection?.levelSelected(requestedLevel)
+            if (requestedLevel > currentLevel && tempContext != null){
+                Toast.makeText(tempContext, R.string.feedback_level_locked, Toast.LENGTH_LONG).show()
+            }
+            else{
+                listenerLevelSelection?.levelSelected(requestedLevel)
+            }
         }
         return fragmentView
     }
