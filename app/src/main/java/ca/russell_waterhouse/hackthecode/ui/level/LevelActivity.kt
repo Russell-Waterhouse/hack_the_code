@@ -74,6 +74,8 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
                     commit()
                 }
             }
+            Toast.makeText(this, R.string.feedback_level_complete, Toast.LENGTH_LONG).show()
+            finish()
         }
         else{
             Toast.makeText(this, R.string.try_again, Toast.LENGTH_LONG).show()
