@@ -38,6 +38,8 @@ class LevelSelectFragment : Fragment() {
     ): View? {
         val fragmentView = inflater.inflate(R.layout.fragment_level_select, container, false)
         val levels = fragmentView.findViewById<GridView>(R.id.level_grid)
+        levels.verticalSpacing = 8
+        levels.horizontalSpacing = 8
         val tempContext = context
         if (tempContext!= null){
             levels.adapter =

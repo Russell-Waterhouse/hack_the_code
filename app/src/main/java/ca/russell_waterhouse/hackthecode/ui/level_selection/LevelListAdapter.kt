@@ -34,8 +34,13 @@ class LevelListAdapter(context: Context, private val resource: Int, private val 
         levelText.gravity = Gravity.CENTER_VERTICAL
         levelText.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
         levelText.layoutParams.height = 150
-        if (position + 1 > maxUnlockedLevel){
-            levelText.background = context.getDrawable(R.drawable.ic_lock_black_24dp)
+        when {
+            position + 1 > maxUnlockedLevel ->
+                levelText.background = context.getDrawable(R.drawable.ic_lock_black_24dp)
+            position + 1 == maxUnlockedLevel ->
+                levelText.background = context.getDrawable(R.drawable.rounded_corners_accent)
+            position + 1 < maxUnlockedLevel ->
+                levelText.background = context.getDrawable(R.drawable.rounded_corners_primary)
         }
         return gridElement
     }
