@@ -54,6 +54,7 @@
     <string name="click_links_prompt">Tap on the button to find out more about each contribution that helped make this project possible</string>
     <string name="content_description_launch_icon">Launch Icon for the app</string>
     <string name="content_description_developer">A picture of the developer</string>
+    <string name="settings">Settings</string>
 
 
 </resources>
