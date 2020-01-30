@@ -13,6 +13,10 @@ class EncoderStateLevel7Test {
 
     @Test
     fun encode() {
-        TODO("algorithm not yet defined and thus cannot yet be tested")
+        val encoderState = EncoderStateLevel7()
+        assertEquals("a", encoderState.encode("a"))
+        assertEquals("ea", encoderState.encode("ae"))
+        assertEquals("lelsusR", encoderState.encode("Russell"))
+        assertEquals("me lborpoN", encoderState.encode("No problem"))
     }
 }
