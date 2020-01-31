@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.ui.about_app.AboutAppActivity
 import ca.russell_waterhouse.hackthecode.ui.level_selection.LevelSelectionActivity
+import ca.russell_waterhouse.hackthecode.ui.settings.SettingsActivity
 
 class MainActivity : AppCompatActivity(),
     MainMenuFragment.OnMainMenuFragmentInteractionListener,
@@ -33,5 +34,9 @@ class MainActivity : AppCompatActivity(),
 
     override fun levelSelectButtonPressed() {
         startActivity(Intent(applicationContext, LevelSelectionActivity::class.java))
+    }
+
+    override fun settingsButtonPressed() {
+        startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
 }

@@ -49,4 +49,8 @@ class Model (application: Application) {
     fun getLevelWord(context: Context): String {
         return encoderState.getLevelWord(context)
     }
+
+    suspend fun deleteAllFromDatabase(){
+        repository.deleteAllFromDatabase()
+    }
 }

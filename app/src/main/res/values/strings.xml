@@ -30,7 +30,7 @@
     <string name="level_title">Level %d</string>
     <string name="feedback_level_locked">That level is locked</string>
     <string name="feedback_level_complete">Correct!</string>
-<!--Open source strings-->
+    <!--Open source strings-->
     <string name="android_sdk">The android open source project</string>
     <string name="android_sdk_url">https://source.android.com/</string>
     <string name="room_library">Room Persistence Library</string>
@@ -55,6 +55,9 @@
     <string name="content_description_launch_icon">Launch Icon for the app</string>
     <string name="content_description_developer">A picture of the developer</string>
     <string name="settings">Settings</string>
-
+    <string name="delete_guesses">Delete all guesses</string>
+    <string name="reset">Reset App</string>
+    <string name="feedback_guesses_removed">All guesses removed from all levels</string>
+    <string name="feedback_app_reset">The app has been Reset</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package ca.russell_waterhouse.hackthecode.ui.main_menu
+package ca.russell_waterhouse.hackthecode.ui.settings
 
 import android.content.Context
 import android.os.Bundle
@@ -9,16 +9,17 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import ca.russell_waterhouse.hackthecode.R
 
+
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [MainMenuFragment.OnMainMenuFragmentInteractionListener] interface
+ * [SettingsFragment.OnSettingsFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [MainMenuFragment.newInstance] factory method to
+ * Use the [SettingsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MainMenuFragment : Fragment() {
-    private var listener: OnMainMenuFragmentInteractionListener? = null
+class SettingsFragment : Fragment() {
+    private var listenerSettings: OnSettingsFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,35 +32,22 @@ class MainMenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val mainMenu = inflater.inflate(R.layout.fragment_main_menu, container, false)
-        initViews(mainMenu)
-        return mainMenu
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
+        val wipeDatabaseButton = view.findViewById<Button>(R.id.delete_all_guesses)
+        wipeDatabaseButton.setOnClickListener{
+            listenerSettings?.deleteAllFromDatabase()
+        }
+        val resetButton = view.findViewById<Button>(R.id.reset)
+        resetButton.setOnClickListener {
+            listenerSettings?.resetLevels()
+        }
+        return view
     }
-
-    private fun initViews(parent: View){
-        val levelSelectButton = parent.findViewById<Button>(R.id.select_level_button)
-        levelSelectButton.setOnClickListener{
-            listener?.levelSelectButtonPressed()
-        }
-        val instructionsButton = parent.findViewById<Button>(R.id.instructions_button)
-        instructionsButton.setOnClickListener{
-            listener?.instructionsButtonPressed()
-        }
-        val aboutAppButton = parent.findViewById<Button>(R.id.about_app_button)
-        aboutAppButton.setOnClickListener{
-            listener?.aboutAppButtonPressed()
-        }
-        val settingsButton = parent.findViewById<Button>(R.id.settings_button)
-        settingsButton.setOnClickListener{
-            listener?.settingsButtonPressed()
-        }
-    }
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnMainMenuFragmentInteractionListener) {
-            listener = context
+        if (context is OnSettingsFragmentInteractionListener) {
+            listenerSettings = context
         } else {
             throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
@@ -67,7 +55,7 @@ class MainMenuFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
-        listener = null
+        listenerSettings = null
     }
 
     /**
@@ -81,11 +69,9 @@ class MainMenuFragment : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-    interface OnMainMenuFragmentInteractionListener {
-        fun levelSelectButtonPressed()
-        fun aboutAppButtonPressed()
-        fun instructionsButtonPressed()
-        fun settingsButtonPressed()
+    interface OnSettingsFragmentInteractionListener {
+        fun resetLevels()
+        fun deleteAllFromDatabase()
     }
 
     companion object {
@@ -93,11 +79,11 @@ class MainMenuFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @return A new instance of fragment MainMenuFragment.
+         * @return A new instance of fragment SettingsFragment.
          */
         @JvmStatic
         fun newInstance() =
-            MainMenuFragment().apply {
+            SettingsFragment().apply {
                 arguments = Bundle().apply {
                 }
             }

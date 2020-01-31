@@ -14,4 +14,8 @@ interface WordDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWord(entity: Entity)
+
+//    TODO: Test this function
+    @Query("DELETE FROM word_table")
+    suspend fun deleteAllFromDatabase()
 }

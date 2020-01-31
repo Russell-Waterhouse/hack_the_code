@@ -12,4 +12,8 @@ class Repository(private val wordDAO: WordDAO) {
     suspend fun insertWord(entity: Entity){
         wordDAO.insertWord(entity)
     }
+
+    suspend fun deleteAllFromDatabase(){
+        wordDAO.deleteAllFromDatabase()
+    }
 }
