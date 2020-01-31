@@ -168,4 +168,49 @@ class EncoderStateTest {
         expectedWord = context.resources.getStringArray(R.array.encoded_level_words)[7]
         assertEquals(expectedWord, encoder.getLevelWord(context))
     }
+
+    @Test
+    fun testLevelStringEncodesCorrectly(){
+        var encoder: EncoderState = EncoderStateLevel1()
+        val expectedOutputArray = context.resources.getStringArray(R.array.encoded_level_words)
+        var expectedOutput = expectedOutputArray[0]
+        val inputArray = context.resources.getStringArray(R.array.decoded_level_words)
+        var input = inputArray[0]
+        assertEquals(expectedOutput, encoder.encode(input))
+
+        encoder = EncoderStateLevel2()
+        expectedOutput = expectedOutputArray[1]
+        input = inputArray[1]
+        assertEquals(expectedOutput, encoder.encode(input))
+
+        encoder = EncoderStateLevel3()
+        expectedOutput = expectedOutputArray[2]
+        input = inputArray[2]
+        assertEquals(expectedOutput, encoder.encode(input))
+
+        encoder = EncoderStateLevel4()
+        expectedOutput = expectedOutputArray[3]
+        input = inputArray[3]
+        assertEquals(expectedOutput, encoder.encode(input))
+
+        encoder = EncoderStateLevel5()
+        expectedOutput = expectedOutputArray[4]
+        input = inputArray[4]
+        assertEquals(expectedOutput, encoder.encode(input))
+
+        encoder = EncoderStateLevel6()
+        expectedOutput = expectedOutputArray[5]
+        input = inputArray[5]
+        assertEquals(expectedOutput, encoder.encode(input))
+
+        encoder = EncoderStateLevel7()
+        expectedOutput = expectedOutputArray[6]
+        input = inputArray[6]
+        assertEquals(expectedOutput, encoder.encode(input))
+
+        encoder = EncoderStateLevel8()
+        expectedOutput = expectedOutputArray[7]
+        input = inputArray[7]
+        assertEquals(expectedOutput, encoder.encode(input))
+    }
 }

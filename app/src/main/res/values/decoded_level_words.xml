@@ -2,12 +2,12 @@
 <resources>
     <string-array name="decoded_level_words">
         <item>I can hack the code</item>
-        <item>My cat is a big fat brat</item>
+        <item>My cat is a big fat brat!</item>
         <item>I am getting pretty good at solving these codes</item>
         <item>Working with the brain every day promotes problem solving skills</item>
         <item>Do not put a fork in a garbage disposal</item>
         <item>My printer is trying to kill me</item>
-        <item></item>
+        <item>Hazel is a good friendo</item>
         <item>Congratulations on completing the first set of Levels. More are soon to come!</item>
     </string-array>
 </resources>

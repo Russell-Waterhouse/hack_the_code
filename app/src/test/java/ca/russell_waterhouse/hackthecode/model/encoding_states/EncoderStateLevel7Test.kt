@@ -18,5 +18,6 @@ class EncoderStateLevel7Test {
         assertEquals("ea", encoderState.encode("ae"))
         assertEquals("lelsusR", encoderState.encode("Russell"))
         assertEquals("me lborpoN", encoderState.encode("No problem"))
+        assertEquals("doner if o doag sliezHa", encoderState.encode("Hazel is a good friendo"))
     }
 }
