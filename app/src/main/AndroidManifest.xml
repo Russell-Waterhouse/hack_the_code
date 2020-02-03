@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.instructions.InstructionsActivity"
+            android:parentActivityName=".ui.main_menu.MainActivity"/>
+        <activity
             android:name=".ui.settings.SettingsActivity"
             android:parentActivityName=".ui.main_menu.MainActivity" />
         <activity

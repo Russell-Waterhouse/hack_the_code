@@ -1,4 +1,4 @@
-package ca.russell_waterhouse.hackthecode.ui.main_menu
+package ca.russell_waterhouse.hackthecode.ui.instructions
 
 import android.content.Context
 import android.os.Bundle

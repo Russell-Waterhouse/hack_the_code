@@ -5,14 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.ui.about_app.AboutAppActivity
+import ca.russell_waterhouse.hackthecode.ui.instructions.InstructionsActivity
 import ca.russell_waterhouse.hackthecode.ui.level_selection.LevelSelectionActivity
 import ca.russell_waterhouse.hackthecode.ui.settings.SettingsActivity
 
 class MainActivity : AppCompatActivity(),
-    MainMenuFragment.OnMainMenuFragmentInteractionListener,
-    InstructionsFragment.OnInstructionsFragmentInteractionListener {
+    MainMenuFragment.OnMainMenuFragmentInteractionListener{
     private val mainMenuTAG = "MAIN_MENU"
-    private val instructionsTAG = "INSTRUCTIONS"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +24,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun instructionsButtonPressed() {
-        val mainMenuFragment = supportFragmentManager.findFragmentByTag(mainMenuTAG)
-        if (mainMenuFragment != null){
-            supportFragmentManager.beginTransaction().hide(mainMenuFragment)
-                .add(R.id.main_container, InstructionsFragment.newInstance(), instructionsTAG).commit()
-        }
+        startActivity(Intent(applicationContext, InstructionsActivity::class.java))
     }
 
     override fun levelSelectButtonPressed() {
