@@ -33,7 +33,7 @@ class InstructionsFragment : Fragment() {
         if (context is OnInstructionsFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
 
@@ -53,9 +53,7 @@ class InstructionsFragment : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-    interface OnInstructionsFragmentInteractionListener {
-//        TODO("Update as needed")
-    }
+    interface OnInstructionsFragmentInteractionListener
 
     companion object {
         /**
