@@ -22,7 +22,6 @@ class Model (application: Application) {
         val encodedWord = encoderState.encode(word)
         val entity = Entity(currentLevel, word, encodedWord)
         repository.insertWord(entity)
-//        TODO("level 8 does not work with decimal inputs. Ensure that users do not type any numbers in to be encoded")
     }
 
     fun setLevel(level: Int){

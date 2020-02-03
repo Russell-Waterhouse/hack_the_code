@@ -1,7 +1,5 @@
 package ca.russell_waterhouse.hackthecode.model.encoding_states
 
-import java.security.InvalidParameterException
-
 class EncoderStateLevel8: EncoderState() {
     override fun getLevel(): Int {
         return 8
@@ -41,12 +39,9 @@ class EncoderStateLevel8: EncoderState() {
     }
 
     private fun numberFromLetter(letter: Char): Int{
-        return when {
-            letter == ' ' -> {
+        return when (letter) {
+            ' ' -> {
                 0
-            }
-            letter.isDigit() -> {
-                throw InvalidParameterException("Letter must not be a digit")
             }
             else -> letter.toInt() - 'A'.toInt() + 1
         }
