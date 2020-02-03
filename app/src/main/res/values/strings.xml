@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Hack The Code</string>
-    <string name="hello_blank_fragment">Hello blank frag</string>
     <string name="prompt_decode_string">Decode This Sentence!</string>
     <string name="encoded_here">Encoded text put here at runtime</string>
     <string name="final_answer">Answer</string>
@@ -59,5 +58,5 @@
     <string name="reset">Reset App</string>
     <string name="feedback_guesses_removed">All guesses removed from all levels</string>
     <string name="feedback_app_reset">The app has been Reset</string>
-
+    <string name="instructions_string">1. Select a level\n2. Take a guess at the correct answer \n3. Learn from the output and try until you get the right answer!</string>
 </resources>
