@@ -35,8 +35,7 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         val currentLevel = intent.getIntExtra(levelKEY, 1)
         model.setLevel(currentLevel)
         setupActionBar()
-        val fragManager = this.supportFragmentManager
-        fragManager.beginTransaction().add(R.id.level_container,
+        supportFragmentManager.beginTransaction().add(R.id.level_container,
             LevelFragment.newInstance(model.getLevelWord(this)),
             LEVEL_FRAGMENT_TAG).commit()
     }
@@ -94,6 +93,9 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun getModel(): Model {
+        if (!::model.isInitialized){
+            model = Model(application)
+        }
         return model
     }
 }
