@@ -114,7 +114,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
-                android:stretchColumns="1"
+                android:stretchColumns="*"
+                android:shrinkColumns="*"
+                android:weightSum="1"
                 />
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
