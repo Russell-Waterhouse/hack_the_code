@@ -58,5 +58,5 @@
     <string name="reset">Reset App</string>
     <string name="feedback_guesses_removed">All guesses removed from all levels</string>
     <string name="feedback_app_reset">The app has been Reset</string>
-    <string name="instructions_string">1. Select a level\n2. Take a guess at the correct answer \n3. Learn from the output and try until you get the right answer!</string>
+    <string name="instructions_string">1. Select a level\n2. Take a guess at the correct answer \n3. Learn from the output and try until you get the right answer! \n Remember: the answers are case sensitive</string>
 </resources>

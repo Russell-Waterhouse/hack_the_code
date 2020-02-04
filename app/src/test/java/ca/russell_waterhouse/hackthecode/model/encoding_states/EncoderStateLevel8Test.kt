@@ -23,5 +23,7 @@ class EncoderStateLevel8Test {
         assertEquals("-68,-76,-10,10,47, ,-5,47, ,-1, ,-4,47, ,-13,4,50, ,7,14,-10, ,10,37, ,-13,-10,37,47, ,-82,-77,4,5,-5,8,8,-20,-8,20,2,-6,4,-8,43,47,", encoderState.encode("Congratulations! More levels are soon to come!"))
         assertEquals("-1,-68,-48,49,33, ,19,2,31,50,", encoderState.encode("Brat Cat10"))
         assertEquals("1,2,2,2,2,2,2,2,2,-15,", encoderState.encode("0123456789"))
+        assertEquals("-68,-76,-10,10,47, ,-5,47, ,-1, ,-4,47, ,-13,4,50, ,7,14,-10, ,10,37, ,-13,-10,37,47, ,-82,-77,4,5,-5,8,8,-20,-8,20,2,-6,4,-8,43,47,"
+            ,encoderState.encode("Congratulations! More levels are soon to come!"))
     }
 }

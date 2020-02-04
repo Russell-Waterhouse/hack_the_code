@@ -83,10 +83,14 @@ class LevelFragment : Fragment() {
             val newRow = TableRow(context)
             val left = TextView(context)
             val right = TextView(context)
+            val parentWidth = guessTable.width
             left.text = item.word
             left.gravity = Gravity.START
+            left.layoutParams?.width = parentWidth / 2
             right.text = item.encodedWordL
             right.gravity = Gravity.END
+            right.layoutParams?.width = parentWidth / 2
+//            TODO: fix width layout
             newRow.addView(left)
             newRow.addView(right)
             guessTable.addView(newRow)

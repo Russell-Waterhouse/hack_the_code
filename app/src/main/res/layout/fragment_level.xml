@@ -107,7 +107,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
-<!--TODO: adjust table layout so that both text views are shown when they are long -->
+
             <TableLayout
                 android:id="@+id/encoded_table"
                 android:layout_width="match_parent"
