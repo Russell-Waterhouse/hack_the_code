@@ -6,6 +6,7 @@ class EncoderStateLevel8: EncoderState() {
     }
 
     override fun encode(word: String): String {
+//        TODO: add spaces to break up the numbers of this text string so that the view can format it correctly
         val numbers = IntArray(word.length)
         var i = 0
         for (letter: Char in word){
