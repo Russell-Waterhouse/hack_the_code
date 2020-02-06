@@ -6,6 +6,9 @@ class EncoderStateLevel8: EncoderState() {
     }
 
     override fun encode(word: String): String {
-        TODO("was numbers based but that doesn't display nicely")
+        val encoder1 = EncoderStateLevel5()
+        val output1 = encoder1.encode(word)
+        val encoder2 = EncoderStateLevel6()
+        return encoder2.encode(output1)
     }
 }

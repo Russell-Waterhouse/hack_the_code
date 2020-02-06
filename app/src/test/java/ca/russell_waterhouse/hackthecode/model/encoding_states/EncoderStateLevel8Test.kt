@@ -13,5 +13,9 @@ class EncoderStateLevel8Test {
 
     @Test
     fun encode() {
+        val encoderState = EncoderStateLevel8()
+        assertEquals("_e", encoderState.encode("a"))
+        assertEquals("c_e", encoderState.encode("ba"))
+        assertEquals("iu vpu s mwmiu tuvmvspD_uheaeop!Ns iiteitu udn!", encoderState.encode("Congratulations! More levels are soon to come!"))
     }
 }
