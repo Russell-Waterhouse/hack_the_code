@@ -48,6 +48,7 @@
             android:ems="10"
             android:hint="@string/final_answer"
             android:inputType="textShortMessage|textLongMessage|text"
+            android:focusedByDefault="false"
             android:textAlignment="center"
             app:layout_constraintEnd_toStartOf="@+id/check_answer"
             app:layout_constraintStart_toStartOf="parent"

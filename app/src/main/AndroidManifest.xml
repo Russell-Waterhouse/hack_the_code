@@ -27,10 +27,10 @@
         </activity>
         <activity
             android:name=".ui.level.LevelActivity"
-            android:parentActivityName=".ui.main_menu.MainActivity" />
+            android:parentActivityName=".ui.main_menu.MainActivity"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".ui.about_app.AboutAppActivity"
             android:parentActivityName=".ui.main_menu.MainActivity" />
     </application>
-
 </manifest>
