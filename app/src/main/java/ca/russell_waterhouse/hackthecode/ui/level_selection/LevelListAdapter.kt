@@ -9,10 +9,10 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import ca.russell_waterhouse.hackthecode.R
 
-class LevelListAdapter(context: Context, private val resource: Int, private val maxUnlockedLevel: Int) : ArrayAdapter<Int>(context, resource) {
+class LevelListAdapter(context: Context, private val resource: Int, private val maxUnlockedLevel: Int)
+    : ArrayAdapter<Int>(context, resource) {
 
     private val count = 8
-    private var levels: IntArray = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8)
 
     override fun isEmpty(): Boolean {
         return false

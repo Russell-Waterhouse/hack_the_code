@@ -4,24 +4,14 @@
     <string name="encoded_here">Encoded text put here at runtime</string>
     <string name="final_answer">Answer</string>
     <string name="hint">Hint</string>
-    <string name="encode">Encode</string>
     <string name="encoded">Encoded</string>
     <string name="not_encoded">Plain</string>
     <string name="check_answer">Check My Answer</string>
-    <string name="example_sentence">example sentence</string>
     <string name="empty_string" />
     <string name="select_level">Select level</string>
     <string name="instructions">Instructions</string>
     <string name="about_app">About the App</string>
     <string name="select_level_prompt">Select a level</string>
-    <string name="numeric_1">1</string>
-    <string name="numeric_2">2</string>
-    <string name="numeric_3">3</string>
-    <string name="numeric_4">4</string>
-    <string name="numeric_5">5</string>
-    <string name="numeric_6">6</string>
-    <string name="numeric_7">7</string>
-    <string name="numeric_8">8</string>
     <string name="preferences_key">HACK_THE_CODE_PREFERENCES</string>
     <string name="maximum_level_key">LEVEL_KEY</string>
     <string name="try_again">Incorrect. Try again</string>
@@ -43,7 +33,6 @@
 
     <string name="about_the_development">Development</string>
     <string name="about_open_source">Open Source Contributions</string>
-    <string name="title_activity_about_app">AboutAppActivity</string>
     <string name="see_code">See the source code</string>
     <string name="about_app_string">This app was created to help students plan what semester to take required courses so they complete their degree on time</string>
     <string name="about_developer_string">This app was developed by Russell Waterhouse, A Software Engineering student at the University of Victoria</string>

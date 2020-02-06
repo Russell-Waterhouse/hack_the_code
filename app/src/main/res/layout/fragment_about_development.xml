@@ -56,7 +56,7 @@
             android:layout_height="100dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-            android:contentDescription="@string/content_description_launch_icon"
+            android:contentDescription="@string/content_description_developer"
             android:src="@drawable/app_picture"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"

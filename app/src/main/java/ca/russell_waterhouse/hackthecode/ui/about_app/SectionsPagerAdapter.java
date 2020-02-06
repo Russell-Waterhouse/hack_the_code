@@ -20,7 +20,7 @@ import ca.russell_waterhouse.hackthecode.ui.about_app.fragments.OpenSourceContri
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.about_the_development, R.string.about_open_source};

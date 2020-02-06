@@ -8,6 +8,6 @@
         <item>The first step in this code is to reverse the input</item>
         <item>See if you can figure out where the letters shift to</item>
         <item>Vowels are moved around first, consonants are last</item>
-        <item></item>
+        <item>This code is made up of 2 previous levels together</item>
     </string-array>
 </resources>

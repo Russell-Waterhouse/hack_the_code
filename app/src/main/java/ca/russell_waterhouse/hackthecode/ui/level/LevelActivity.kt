@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 private const val levelKEY = "level_to_load"
 
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
-    private val LEVEL_FRAGMENT_TAG = "Level Fragment"
+    private val levelFragmentTAG = "Level Fragment"
     private lateinit var model: Model
 
     companion object {
@@ -37,7 +37,7 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         setupActionBar()
         supportFragmentManager.beginTransaction().add(R.id.level_container,
             LevelFragment.newInstance(model.getLevelWord(this)),
-            LEVEL_FRAGMENT_TAG).commit()
+            levelFragmentTAG).commit()
     }
 
     private fun setupActionBar() {

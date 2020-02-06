@@ -8,9 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="LevelButton" parent="TextAppearance.AppCompat.Widget.Button.Colored">
-    </style>
-
     <style name="buttonAccent" parent="TextAppearance.AppCompat.Widget.Button.Colored">
         <item name="android:background">@drawable/rounded_corners_accent</item>
         <item name="android:backgroundTint">@color/colorAccent</item>
