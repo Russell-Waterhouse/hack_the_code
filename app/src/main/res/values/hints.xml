@@ -6,8 +6,8 @@
         <item>Watch what happens to individual letters</item>
         <item>Watch what happens to consonant-vowel pairs</item>
         <item>The first step in this code is to reverse the input</item>
-        <item>Each number maps to one letter</item>
+        <item></item>
         <item>Vowels are moved around first, consonants are last</item>
-        <item>Once converted to numbers, there are mathematical operations performed</item>
+        <item></item>
     </string-array>
 </resources>

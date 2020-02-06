@@ -6,21 +6,19 @@ class EncoderStateLevel6: EncoderState() {
     }
 
     override fun encode(word: String): String {
-//        TODO: add spaces to break up the numbers of this text string so that the view can format it correctly
-        val stringBuilder = StringBuilder()
-        for (letter: Char in word) {
-            when {
-                letter.isLetter() -> {
-                    stringBuilder.append((letter.toInt() - 'A'.toInt() + 1).toString() + ',')
-                }
-                letter.isDigit() -> {
-                    stringBuilder.append("<$letter>")
-                }
-                else -> {
-                    stringBuilder.append(letter)
-                }
-            }
+        val stringBuilderStart = StringBuilder()
+        val stringBuilderEnd = StringBuilder()
+        var i = 0
+        val length = word.length
+        while(i <= length-2) {
+            stringBuilderEnd.append(word[i])
+            i++
+            stringBuilderStart.append(word[i])
+            i++
         }
-        return stringBuilder.toString()
+        if (i < length){
+            stringBuilderEnd.append(word[i])
+        }
+        return stringBuilderStart.toString() + "_" + stringBuilderEnd.reversed().toString()
     }
 }
