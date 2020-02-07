@@ -9,7 +9,7 @@ class EncoderStateLevel4: EncoderState() {
 
     override fun encode(word: String): String {
         var prevChar: Char = word[0]
-        var currentChar: Char = word[1]
+        var currentChar: Char
         val wordLength = word.length
         val stringBuilder = StringBuilder()
         var needToAddLastLetter = true
@@ -21,7 +21,7 @@ class EncoderStateLevel4: EncoderState() {
                 stringBuilder.append(aheadOneConsonant(prevChar))
                 i+=2
                 needToAddLastLetter = false
-                if (i < wordLength) {
+                if (i <= wordLength) {
                     prevChar = word[i - 1]
                     needToAddLastLetter = true
                 }
@@ -34,7 +34,7 @@ class EncoderStateLevel4: EncoderState() {
             }
         }
         if (needToAddLastLetter){
-            stringBuilder.append(currentChar)
+            stringBuilder.append(word[i-1])
         }
         return stringBuilder.toString()
     }

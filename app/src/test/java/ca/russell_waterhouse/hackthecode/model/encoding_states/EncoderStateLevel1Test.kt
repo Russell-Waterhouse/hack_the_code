@@ -25,5 +25,6 @@ class EncoderStateLevel1Test {
         assertEquals("THOS OS ELL CEPS", encoder.encode("THIS IS ALL CAPS"))
 //        test it works as expected with non-alpha characters
         assertEquals("!@#$%^&*()_+-=;'/", encoder.encode("!@#$%^&*()_+-=;'/"))
+        assertEquals("aeiouAEIOU", encoder.encode("uaeioUAEIO"))
     }
 }
