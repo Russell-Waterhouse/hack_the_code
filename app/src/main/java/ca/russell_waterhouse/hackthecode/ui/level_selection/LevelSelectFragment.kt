@@ -50,7 +50,7 @@ class LevelSelectFragment : Fragment() {
                 )
         }
         levels.numColumns = 4
-        levels.setOnItemClickListener { parent, view, position, id ->
+        levels.setOnItemClickListener { _, _, position, _ ->
             val requestedLevel = position + 1
             if (requestedLevel > currentLevel && tempContext != null){
                 Toast.makeText(tempContext, R.string.feedback_level_locked, Toast.LENGTH_LONG).show()
