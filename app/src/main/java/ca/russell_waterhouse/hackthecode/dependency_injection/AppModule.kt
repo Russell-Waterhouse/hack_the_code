@@ -15,9 +15,9 @@ object AppModule{
     @Provides
     @Singleton
     fun provideDAO(
-        database: WordDatabase
+        context: Context
     ):WordDAO{
-        return database.wordDAO()
+        return WordDatabase.getDatabaseInstance(context).wordDAO()
     }
 
     @JvmStatic
