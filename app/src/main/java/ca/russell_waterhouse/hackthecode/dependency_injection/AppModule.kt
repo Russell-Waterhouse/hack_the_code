@@ -19,11 +19,4 @@ object AppModule{
     ):WordDAO{
         return WordDatabase.getDatabaseInstance(context).wordDAO()
     }
-//
-//    @JvmStatic
-//    @Provides
-//    @Singleton
-//    fun provideDatabase(context: Context): WordDatabase{
-//        return WordDatabase.getDatabaseInstance(context)
-//    }
 }

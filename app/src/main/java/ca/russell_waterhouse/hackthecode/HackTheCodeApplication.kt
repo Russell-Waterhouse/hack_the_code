@@ -12,7 +12,6 @@ import javax.inject.Singleton
     SubComponentsModule::class
 ])
 interface ApplicationComponent{
-//    fun inject(settings: SettingsActivity)
 
     fun levelComponent():LevelComponent.Factory
     fun settingsComponent(): SettingsComponent.Factory
