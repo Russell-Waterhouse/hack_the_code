@@ -4,10 +4,12 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.database.Repository
+import ca.russell_waterhouse.hackthecode.dependency_injection.ActivityScope
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderFactory
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderState
 import javax.inject.Inject
 
+@ActivityScope
 class Model @Inject constructor(private val repository: Repository, private val factory: EncoderFactory) {
 
     private var currentLevel = 1

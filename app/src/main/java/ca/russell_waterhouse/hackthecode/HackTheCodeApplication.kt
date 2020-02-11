@@ -3,22 +3,21 @@ package ca.russell_waterhouse.hackthecode
 import android.app.Application
 import ca.russell_waterhouse.hackthecode.dependency_injection.AppModule
 import ca.russell_waterhouse.hackthecode.dependency_injection.ContextModule
-import ca.russell_waterhouse.hackthecode.ui.level.LevelActivity
-import ca.russell_waterhouse.hackthecode.ui.level.LevelFragment
-import ca.russell_waterhouse.hackthecode.ui.settings.SettingsActivity
+import ca.russell_waterhouse.hackthecode.dependency_injection.LevelComponent
+import ca.russell_waterhouse.hackthecode.dependency_injection.SubComponentsModule
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
     AppModule::class,
-    ContextModule::class
+    ContextModule::class,
+    SubComponentsModule::class
 ])
-
 interface ApplicationComponent{
-    fun inject(level: LevelActivity)
-    fun inject(settings: SettingsActivity)
-    fun inject(fragment: LevelFragment)
+//    fun inject(settings: SettingsActivity)
+
+    fun levelComponent():LevelComponent.Factory
 
     @Component.Builder
     interface Builder{

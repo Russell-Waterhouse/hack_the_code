@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import ca.russell_waterhouse.hackthecode.HackTheCodeApplication
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.model.Model
 import kotlinx.coroutines.GlobalScope
@@ -17,11 +16,10 @@ class SettingsActivity : AppCompatActivity(), SettingsFragment.OnSettingsFragmen
     lateinit var model: Model
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        (applicationContext as HackTheCodeApplication).appComponent.inject(this)
+//        (applicationContext as HackTheCodeApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         supportFragmentManager.beginTransaction().add(R.id.settings_container, SettingsFragment.newInstance()).commit()
-//        model = Model(application)
 
         setSupportActionBar(findViewById(R.id.settings_toolbar))
         supportActionBar?.title = getString(R.string.settings)

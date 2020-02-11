@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import ca.russell_waterhouse.hackthecode.HackTheCodeApplication
 import ca.russell_waterhouse.hackthecode.R
+import ca.russell_waterhouse.hackthecode.dependency_injection.LevelComponent
 import ca.russell_waterhouse.hackthecode.model.Model
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -20,6 +21,7 @@ private const val levelKEY = "level_to_load"
 
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
     private val levelFragmentTAG = "Level Fragment"
+    lateinit var levelComponent: LevelComponent
 
     @Inject
     lateinit var mModel: Model
@@ -34,7 +36,8 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        (applicationContext as HackTheCodeApplication).appComponent.inject(this)
+        levelComponent = (applicationContext as HackTheCodeApplication).appComponent.levelComponent().create()
+        levelComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
         val currentLevel = intent.getIntExtra(levelKEY, 1)
@@ -98,13 +101,5 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         }
         val inputMethodManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
-    }
-
-//    TODO: inject model into fragment instead of using this
-    override fun getModel(): Model {
-        if (!::mModel.isInitialized){
-            (applicationContext as HackTheCodeApplication).appComponent.inject(this)
-        }
-        return mModel
     }
 }
