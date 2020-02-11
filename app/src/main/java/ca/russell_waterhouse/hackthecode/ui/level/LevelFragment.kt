@@ -113,7 +113,6 @@ class LevelFragment : Fragment() {
     interface OnLevelFragmentInteractionListener {
         fun testString(string: String)
         fun encodeString(string: String)
-        fun hintRequested()
     }
 
     companion object {
