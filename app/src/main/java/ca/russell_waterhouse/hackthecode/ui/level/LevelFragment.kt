@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.database.Entity
-import ca.russell_waterhouse.hackthecode.model.Model
+import ca.russell_waterhouse.hackthecode.model.DefaultModel
 import javax.inject.Inject
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ class LevelFragment : Fragment() {
     private var listenerLevel: OnLevelFragmentInteractionListener? = null
     private lateinit var guessTable: TableLayout
     @Inject
-    lateinit var model: Model
+    lateinit var defaultModel: DefaultModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,7 +71,7 @@ class LevelFragment : Fragment() {
         if (context is OnLevelFragmentInteractionListener) {
             listenerLevel = context
             (activity as LevelActivity).levelComponent.inject(this)
-            model.getLiveDataWords().observe(this, Observer { newWordList ->
+            defaultModel.getLiveDataWords().observe(this, Observer { newWordList ->
                 updateListOfWords(newWordList)
             })
         } else {

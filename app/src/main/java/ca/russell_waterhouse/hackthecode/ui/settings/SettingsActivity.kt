@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import ca.russell_waterhouse.hackthecode.HackTheCodeApplication
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.dependency_injection.SettingsComponent
-import ca.russell_waterhouse.hackthecode.model.Model
+import ca.russell_waterhouse.hackthecode.model.DefaultModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,7 +17,7 @@ class SettingsActivity : AppCompatActivity(), SettingsFragment.OnSettingsFragmen
     private lateinit var settingsComponent: SettingsComponent
 
     @Inject
-    lateinit var model: Model
+    lateinit var defaultModel: DefaultModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         settingsComponent = (applicationContext as HackTheCodeApplication).appComponent.settingsComponent().create()
@@ -48,7 +48,7 @@ class SettingsActivity : AppCompatActivity(), SettingsFragment.OnSettingsFragmen
     override fun deleteAllFromDatabase() {
         Toast.makeText(applicationContext, R.string.feedback_guesses_removed, Toast.LENGTH_LONG).show()
         GlobalScope.launch {
-            model.deleteAllFromDatabase()
+            defaultModel.deleteAllFromDatabase()
         }
     }
 }

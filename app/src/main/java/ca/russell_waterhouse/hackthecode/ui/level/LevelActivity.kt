@@ -13,7 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import ca.russell_waterhouse.hackthecode.HackTheCodeApplication
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.dependency_injection.LevelComponent
-import ca.russell_waterhouse.hackthecode.model.Model
+import ca.russell_waterhouse.hackthecode.model.DefaultModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -26,7 +26,7 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     lateinit var levelComponent: LevelComponent
 
     @Inject
-    lateinit var model: Model
+    lateinit var defaultModel: DefaultModel
 
     companion object {
         @JvmStatic
@@ -43,10 +43,10 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
         val currentLevel = intent.getIntExtra(levelKEY, 1)
-        model.setLevel(currentLevel)
+        defaultModel.setLevel(currentLevel)
         setupActionBar()
         supportFragmentManager.beginTransaction().add(R.id.level_container,
-            LevelFragment.newInstance(model.getLevelWord(this)),
+            LevelFragment.newInstance(defaultModel.getLevelWord(this)),
             levelFragmentTAG).commit()
     }
 
@@ -56,14 +56,14 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         hintButton.setTextColor(getColor(R.color.colorNeutral))
         hintButton.gravity = Gravity.END
         hintButton.setOnClickListener {
-            val hint = model.getHint(this)
+            val hint = defaultModel.getHint(this)
             val rootLayout = findViewById<ConstraintLayout>(R.id.root_layout_level)
             Snackbar.make(rootLayout, hint, Snackbar.LENGTH_LONG).show()
         }
         val toolBar = findViewById<Toolbar>(R.id.toolbar)
         toolBar.title = getString(R.string.empty_string)
         val toolbarTitle = findViewById<TextView>(R.id.toolbar_title)
-        val level = model.getLevel()
+        val level = defaultModel.getLevel()
         toolbarTitle.text = getString(R.string.level_title, level)
         setSupportActionBar(toolBar)
         supportActionBar?.setHomeButtonEnabled(true)
@@ -72,10 +72,10 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun testString(string: String){
-        val result = model.testString(this, string)
+        val result = defaultModel.testString(this, string)
         if (result){
             val sharedPreferences = getSharedPreferences(getString(R.string.preferences_key), Context.MODE_PRIVATE)
-            val currentLevel = model.getLevel()
+            val currentLevel = defaultModel.getLevel()
             var currentMaxLevel = sharedPreferences.getInt(getString(R.string.maximum_level_key), 1)
             if (currentLevel == currentMaxLevel){
                 currentMaxLevel++
@@ -94,7 +94,7 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
 
     override fun encodeString(string: String){
         GlobalScope.launch {
-            model.encodeWord(string)
+            defaultModel.encodeWord(string)
         }
         val inputMethodManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
