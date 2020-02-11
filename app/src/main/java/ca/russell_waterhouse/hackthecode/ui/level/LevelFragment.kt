@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.model.Model
+import javax.inject.Inject
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_ENCODED_STRING = "param2"
@@ -25,11 +26,16 @@ private const val ARG_ENCODED_STRING = "param2"
  * create an instance of this fragment.
  */
 class LevelFragment : Fragment() {
+
     private var encodedString: String? = null
     private var listenerLevel: OnLevelFragmentInteractionListener? = null
     private lateinit var guessTable: TableLayout
+    @Inject
+    lateinit var model: Model
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         arguments?.let {
             encodedString = it.getString(ARG_ENCODED_STRING)
@@ -64,7 +70,9 @@ class LevelFragment : Fragment() {
         super.onAttach(context)
         if (context is OnLevelFragmentInteractionListener) {
             listenerLevel = context
-            listenerLevel?.getModel()?.getLiveDataWords()?.observe(this, Observer { newWordList ->
+            (activity as LevelActivity).levelComponent.inject(this)
+//            TODO("Fix this list of words is not updating")
+            model.getLiveDataWords().observe(this, Observer { newWordList ->
                 updateListOfWords(newWordList)
             })
         } else {
@@ -107,7 +115,6 @@ class LevelFragment : Fragment() {
         fun testString(string: String)
         fun encodeString(string: String)
         fun hintRequested()
-        fun getModel(): Model
     }
 
     companion object {

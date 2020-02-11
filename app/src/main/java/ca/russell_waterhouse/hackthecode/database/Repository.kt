@@ -1,9 +1,10 @@
 package ca.russell_waterhouse.hackthecode.database
 
 import androidx.lifecycle.LiveData
+import javax.inject.Inject
 
 
-class Repository(private val wordDAO: WordDAO) {
+class Repository @Inject constructor(private val wordDAO: WordDAO) {
 
     fun getWordsForLevel(level: Int):LiveData<List<Entity>>{
         return wordDAO.getWordsForLevel(level)
