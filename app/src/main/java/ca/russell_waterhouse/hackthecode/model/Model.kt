@@ -1,28 +1,17 @@
 package ca.russell_waterhouse.hackthecode.model
 
-import android.app.Application
 import android.content.Context
 import androidx.lifecycle.LiveData
-import ca.russell_waterhouse.hackthecode.HackTheCodeApplication
 import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.database.Repository
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderFactory
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderState
 import javax.inject.Inject
 
-class Model (application: Application) {
-
-    init {
-        (application as HackTheCodeApplication).appComponent.inject(this)
-    }
+class Model @Inject constructor(private val repository: Repository, private val factory: EncoderFactory) {
 
     private var currentLevel = 1
-    private val factory = EncoderFactory()
     private var encoderState: EncoderState = factory.getEncoder(currentLevel)
-//    @Inject
-//    lateinit var wordDao : WordDAO
-    @Inject
-    lateinit var repository: Repository
 
 
     suspend fun encodeWord(word: String){
