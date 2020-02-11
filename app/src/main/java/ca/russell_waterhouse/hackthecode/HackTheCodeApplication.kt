@@ -1,10 +1,7 @@
 package ca.russell_waterhouse.hackthecode
 
 import android.app.Application
-import ca.russell_waterhouse.hackthecode.dependency_injection.AppModule
-import ca.russell_waterhouse.hackthecode.dependency_injection.ContextModule
-import ca.russell_waterhouse.hackthecode.dependency_injection.LevelComponent
-import ca.russell_waterhouse.hackthecode.dependency_injection.SubComponentsModule
+import ca.russell_waterhouse.hackthecode.dependency_injection.*
 import dagger.Component
 import javax.inject.Singleton
 
@@ -18,6 +15,7 @@ interface ApplicationComponent{
 //    fun inject(settings: SettingsActivity)
 
     fun levelComponent():LevelComponent.Factory
+    fun settingsComponent(): SettingsComponent.Factory
 
     @Component.Builder
     interface Builder{
