@@ -9,16 +9,22 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import ca.russell_waterhouse.hackthecode.HackTheCodeApplication
 import ca.russell_waterhouse.hackthecode.R
+import ca.russell_waterhouse.hackthecode.dependency_injection.LevelComponent
 import ca.russell_waterhouse.hackthecode.model.Model
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 private const val levelKEY = "level_to_load"
 
 class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteractionListener {
     private val levelFragmentTAG = "Level Fragment"
-    private lateinit var model: Model
+    lateinit var levelComponent: LevelComponent
+
+    @Inject
+    lateinit var mModel: Model
 
     companion object {
         @JvmStatic
@@ -30,14 +36,15 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        levelComponent = (applicationContext as HackTheCodeApplication).appComponent.levelComponent().create()
+        levelComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
-        model = Model(application)
         val currentLevel = intent.getIntExtra(levelKEY, 1)
-        model.setLevel(currentLevel)
+        mModel.setLevel(currentLevel)
         setupActionBar()
         supportFragmentManager.beginTransaction().add(R.id.level_container,
-            LevelFragment.newInstance(model.getLevelWord(this)),
+            LevelFragment.newInstance(mModel.getLevelWord(this)),
             levelFragmentTAG).commit()
     }
 
@@ -47,13 +54,13 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         hintButton.setTextColor(getColor(R.color.colorNeutral))
         hintButton.gravity = Gravity.END
         hintButton.setOnClickListener {
-            val hint = model.getHint(this)
+            val hint = mModel.getHint(this)
             Toast.makeText(this, hint, Toast.LENGTH_LONG).show()
         }
         val toolBar = findViewById<Toolbar>(R.id.toolbar)
         toolBar.title = getString(R.string.empty_string)
         val toolbarTitle = findViewById<TextView>(R.id.toolbar_title)
-        val level = model.getLevel()
+        val level = mModel.getLevel()
         toolbarTitle.text = getString(R.string.level_title, level)
         setSupportActionBar(toolBar)
         supportActionBar?.setHomeButtonEnabled(true)
@@ -62,10 +69,10 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun testString(string: String){
-        val result = model.testString(this, string)
+        val result = mModel.testString(this, string)
         if (result){
             val sharedPreferences = getSharedPreferences(getString(R.string.preferences_key), Context.MODE_PRIVATE)
-            val currentLevel = model.getLevel()
+            val currentLevel = mModel.getLevel()
             var currentMaxLevel = sharedPreferences.getInt(getString(R.string.maximum_level_key), 1)
             if (currentLevel == currentMaxLevel){
                 currentMaxLevel++
@@ -83,22 +90,16 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
     }
 
     override fun hintRequested(){
-        val hint = model.getHint(this)
+        val hint = mModel.getHint(this)
         Toast.makeText(this, hint, Toast.LENGTH_LONG).show()
+//        TODO: Make this a snackbar
     }
 
     override fun encodeString(string: String){
         GlobalScope.launch {
-            model.encodeWord(string)
+            mModel.encodeWord(string)
         }
         val inputMethodManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
-    }
-
-    override fun getModel(): Model {
-        if (!::model.isInitialized){
-            model = Model(application)
-        }
-        return model
     }
 }

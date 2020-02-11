@@ -1,8 +1,9 @@
 package ca.russell_waterhouse.hackthecode.model.encoding_states
 
 import java.security.InvalidParameterException
+import javax.inject.Inject
 
-class EncoderFactory {
+class EncoderFactory @Inject constructor() {
 
     fun getEncoder(level: Int): EncoderState{
         return when (level) {
