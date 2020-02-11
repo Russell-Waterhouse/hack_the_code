@@ -3,7 +3,9 @@ package ca.russell_waterhouse.hackthecode.model
 import android.content.Context
 import androidx.lifecycle.LiveData
 import ca.russell_waterhouse.hackthecode.database.Entity
+import ca.russell_waterhouse.hackthecode.dependency_injection.ActivityScope
 
+@ActivityScope
 interface Model {
 
     suspend fun encodeWord(word: String)
