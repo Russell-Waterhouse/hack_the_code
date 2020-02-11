@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class SettingsActivity : AppCompatActivity(), SettingsFragment.OnSettingsFragmentInteractionListener {
 
-    lateinit var settingsComponent: SettingsComponent
+    private lateinit var settingsComponent: SettingsComponent
 
     @Inject
     lateinit var model: Model
