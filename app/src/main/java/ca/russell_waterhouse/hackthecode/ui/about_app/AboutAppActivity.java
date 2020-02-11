@@ -71,4 +71,10 @@ public class AboutAppActivity extends AppCompatActivity
         Intent materialInBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.material_url)));
         startActivity(materialInBrowser);
     }
+
+    @Override
+    public void daggerLibraryButtonPressed() {
+        Intent daggerInBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.dagger_url)));
+        startActivity(daggerInBrowser);
+    }
 }

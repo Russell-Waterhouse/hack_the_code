@@ -9,10 +9,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import ca.russell_waterhouse.hackthecode.HackTheCodeApplication
 import ca.russell_waterhouse.hackthecode.R
 import ca.russell_waterhouse.hackthecode.dependency_injection.LevelComponent
 import ca.russell_waterhouse.hackthecode.model.Model
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -55,7 +57,8 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         hintButton.gravity = Gravity.END
         hintButton.setOnClickListener {
             val hint = mModel.getHint(this)
-            Toast.makeText(this, hint, Toast.LENGTH_LONG).show()
+            val rootLayout = findViewById<ConstraintLayout>(R.id.root_layout_level)
+            Snackbar.make(rootLayout, hint, Snackbar.LENGTH_LONG).show()
         }
         val toolBar = findViewById<Toolbar>(R.id.toolbar)
         toolBar.title = getString(R.string.empty_string)
@@ -87,12 +90,6 @@ class LevelActivity : AppCompatActivity(), LevelFragment.OnLevelFragmentInteract
         else{
             Toast.makeText(this, R.string.try_again, Toast.LENGTH_LONG).show()
         }
-    }
-
-    override fun hintRequested(){
-        val hint = mModel.getHint(this)
-        Toast.makeText(this, hint, Toast.LENGTH_LONG).show()
-//        TODO: Make this a snackbar
     }
 
     override fun encodeString(string: String){

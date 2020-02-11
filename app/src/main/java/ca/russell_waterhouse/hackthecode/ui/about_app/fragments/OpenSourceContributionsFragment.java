@@ -97,6 +97,15 @@ public class OpenSourceContributionsFragment extends Fragment {
                 }
             }
         });
+        Button daggerButton = view.findViewById(R.id.dagger_library);
+        daggerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mListener != null){
+                    mListener.daggerLibraryButtonPressed();
+                }
+            }
+        });
         return view;
     }
 
@@ -133,5 +142,6 @@ public class OpenSourceContributionsFragment extends Fragment {
         void liveDataLibraryButtonPressed();
         void espressoLibraryButtonPressed();
         void materialLibraryButtonPressed();
+        void daggerLibraryButtonPressed();
     }
 }

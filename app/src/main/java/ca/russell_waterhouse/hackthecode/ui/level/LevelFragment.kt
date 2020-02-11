@@ -71,7 +71,6 @@ class LevelFragment : Fragment() {
         if (context is OnLevelFragmentInteractionListener) {
             listenerLevel = context
             (activity as LevelActivity).levelComponent.inject(this)
-//            TODO("Fix this list of words is not updating")
             model.getLiveDataWords().observe(this, Observer { newWordList ->
                 updateListOfWords(newWordList)
             })
@@ -114,7 +113,6 @@ class LevelFragment : Fragment() {
     interface OnLevelFragmentInteractionListener {
         fun testString(string: String)
         fun encodeString(string: String)
-        fun hintRequested()
     }
 
     companion object {

@@ -66,6 +66,13 @@ xmlns:android="http://schemas.android.com/apk/res/android">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/material_library" />
-<!--TODO: add Dagger-->
+
+            <Button
+                android:id="@+id/dagger_library"
+                style="@style/buttonAccent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dagger_library"/>
         </LinearLayout>
 </ScrollView>
