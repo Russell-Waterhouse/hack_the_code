@@ -77,4 +77,8 @@ dependencies {
 
 //    LeakCanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+
+    testImplementation "org.mockito:mockito-core:3.0.0"
+    androidTestImplementation "org.mockito:mockito-android:3.0.0"
+    //TODO: add mockito to open source contributions
 }
