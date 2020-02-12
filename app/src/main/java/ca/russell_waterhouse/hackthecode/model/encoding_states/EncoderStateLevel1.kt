@@ -1,6 +1,6 @@
 package ca.russell_waterhouse.hackthecode.model.encoding_states
 
-class EncoderStateLevel1: EncoderState() {
+open class EncoderStateLevel1: EncoderState() {
 
     override fun getLevel(): Int {
         return 1
