@@ -32,6 +32,7 @@ class DefaultModelTest {
 
     @Test
     fun encodeWord() {
+        TODO("Not implemented")
     }
 
     @Test
@@ -50,21 +51,26 @@ class DefaultModelTest {
 
     @Test
     fun getLiveDataWords() {
+        TODO("Not implemented")
     }
 
     @Test
     fun testString() {
+        TODO("Not implemented")
     }
 
     @Test
     fun getHint() {
+        TODO("Not implemented")
     }
 
     @Test
     fun getLevelWord() {
+        TODO("Not implemented")
     }
 
     @Test
     fun deleteAllFromDatabase() {
+        TODO("Not implemented")
     }
 }
