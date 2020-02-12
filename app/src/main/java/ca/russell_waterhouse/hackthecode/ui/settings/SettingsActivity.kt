@@ -25,7 +25,6 @@ class SettingsActivity : AppCompatActivity(), SettingsFragment.OnSettingsFragmen
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         supportFragmentManager.beginTransaction().add(R.id.settings_container, SettingsFragment.newInstance()).commit()
-
         setSupportActionBar(findViewById(R.id.settings_toolbar))
         supportActionBar?.title = getString(R.string.settings)
         supportActionBar?.setDisplayShowHomeEnabled(true)
