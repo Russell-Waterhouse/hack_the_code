@@ -75,6 +75,20 @@ xmlns:android="http://schemas.android.com/apk/res/android">
                 android:layout_height="wrap_content"
                 android:text="@string/dagger_library"/>
 
-<!--            TODO: add leak canary-->
+            <Button
+                android:id="@+id/leak_canary_library"
+                style="@style/buttonAccent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/leak_canary_library"/>
+
+            <Button
+                android:id="@+id/mockito_library"
+                style="@style/buttonAccent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mockito_library"/>
         </LinearLayout>
 </ScrollView>

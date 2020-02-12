@@ -77,4 +77,16 @@ public class AboutAppActivity extends AppCompatActivity
         Intent daggerInBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.dagger_url)));
         startActivity(daggerInBrowser);
     }
+
+    @Override
+    public void leakCanaryButtonPressed() {
+        Intent leakCanaryInBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.leak_canary_url)));
+        startActivity(leakCanaryInBrowser);
+    }
+
+    @Override
+    public void mockitoButtonPressed() {
+        Intent mockitoCanaryInBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.mockito_url)));
+        startActivity(mockitoCanaryInBrowser);
+    }
 }
