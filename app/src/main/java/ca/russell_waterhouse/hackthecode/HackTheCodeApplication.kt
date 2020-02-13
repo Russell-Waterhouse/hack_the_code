@@ -7,7 +7,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    AppModule::class,
+    WordDaoModule::class,
     ContextModule::class,
     SubComponentsModule::class
 ])
@@ -23,6 +23,6 @@ interface ApplicationComponent{
     }
 }
 
-class HackTheCodeApplication: Application() {
-    val appComponent: ApplicationComponent = DaggerApplicationComponent.builder().contextModule(ContextModule(this)).build()
+open class HackTheCodeApplication: Application() {
+    open val appComponent: ApplicationComponent = DaggerApplicationComponent.builder().contextModule(ContextModule(this)).build()
 }

@@ -9,7 +9,7 @@ import javax.inject.Singleton
 
 
 @Module
-object AppModule{
+object WordDaoModule{
 
     @JvmStatic
     @Provides

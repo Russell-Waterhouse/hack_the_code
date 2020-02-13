@@ -10,7 +10,7 @@ import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderState
 import javax.inject.Inject
 
 @ActivityScope
-class DefaultModel @Inject constructor(
+open class DefaultModel @Inject constructor(
     private val repository: Repository,
     private val factory: EncoderFactory
 ): Model {

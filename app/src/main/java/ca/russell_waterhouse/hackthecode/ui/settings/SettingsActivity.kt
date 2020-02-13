@@ -20,7 +20,8 @@ class SettingsActivity : AppCompatActivity(), SettingsFragment.OnSettingsFragmen
     lateinit var model: Model
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        settingsComponent = (applicationContext as HackTheCodeApplication).appComponent.settingsComponent().create()
+        val appComponent = (applicationContext as HackTheCodeApplication).appComponent
+        settingsComponent = appComponent.settingsComponent().create()
         settingsComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
