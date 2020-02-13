@@ -1,10 +1,7 @@
 package ca.russell_waterhouse.hackthecode
 
-import android.content.Context
 import ca.russell_waterhouse.hackthecode.dependency_injection.ContextModule
-import ca.russell_waterhouse.hackthecode.dependency_injection.SettingsComponent
 import ca.russell_waterhouse.hackthecode.dependency_injection.WordDaoModule
-import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
