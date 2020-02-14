@@ -11,7 +11,7 @@ import javax.inject.Scope
 annotation class ActivityScope
 
 @ActivityScope
-@Subcomponent
+@Subcomponent(modules = [ModelBindsModule::class])
 interface LevelComponent {
 
     @Subcomponent.Factory

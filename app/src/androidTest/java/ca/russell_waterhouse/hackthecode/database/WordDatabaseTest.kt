@@ -48,7 +48,7 @@ class WordDatabaseTest {
     @Test
     fun testInsertionRetrieval(){
 //        Insertion
-        val testData = Entity(1, "String", "Encoded_String")
+        val testData = WordEntity(1, "String", "Encoded_String")
         runBlocking {
             wordDAO.insertWord(testData)
         }
@@ -56,9 +56,9 @@ class WordDatabaseTest {
 //        Retrieval
         val liveList = wordDAO.getWordsForLevel(1)
         val countDownLatch = CountDownLatch(1)
-        var retrievedData : Entity? = null
-        val observer = object : Observer<List<Entity>> {
-            override fun onChanged(t: List<Entity>?) {
+        var retrievedData : WordEntity? = null
+        val observer = object : Observer<List<WordEntity>> {
+            override fun onChanged(t: List<WordEntity>?) {
                 if(t != null && t.isNotEmpty()){
                     retrievedData = t[0]
                     countDownLatch.countDown()
@@ -78,9 +78,9 @@ class WordDatabaseTest {
 
         val countDownLatch = CountDownLatch(1)
         val liveList = wordDAO.getWordsForLevel(1)
-        var retrievedData : List<Entity>? = null
-        val observer = object : Observer<List<Entity>> {
-            override fun onChanged(t: List<Entity>?) {
+        var retrievedData : List<WordEntity>? = null
+        val observer = object : Observer<List<WordEntity>> {
+            override fun onChanged(t: List<WordEntity>?) {
                 if(t != null && t.isNotEmpty()){
                     retrievedData = t
                     countDownLatch.countDown()
@@ -99,9 +99,9 @@ class WordDatabaseTest {
 
         var countDownLatch = CountDownLatch(1)
         var liveList = wordDAO.getWordsForLevel(1)
-        var retrievedData : List<Entity>? = null
-        val observer = object : Observer<List<Entity>> {
-            override fun onChanged(t: List<Entity>?) {
+        var retrievedData : List<WordEntity>? = null
+        val observer = object : Observer<List<WordEntity>> {
+            override fun onChanged(t: List<WordEntity>?) {
                 if(t != null && t.isNotEmpty()){
                     retrievedData = t
                     countDownLatch.countDown()
@@ -120,8 +120,8 @@ class WordDatabaseTest {
         countDownLatch = CountDownLatch(1)
         liveList = wordDAO.getWordsForLevel(1)
         retrievedData = null
-        val newObserver = object : Observer<List<Entity>> {
-            override fun onChanged(t: List<Entity>?) {
+        val newObserver = object : Observer<List<WordEntity>> {
+            override fun onChanged(t: List<WordEntity>?) {
                 if(t != null){
                     retrievedData = t
                     countDownLatch.countDown()
@@ -131,15 +131,15 @@ class WordDatabaseTest {
         }
         liveList.observeForever(newObserver)
         countDownLatch.await()
-        assertEquals(mutableListOf1<Entity>(), retrievedData)
+        assertEquals(mutableListOf1<WordEntity>(), retrievedData)
     }
 
-    private fun insertListOfEntities(): List<Entity> {
+    private fun insertListOfEntities(): List<WordEntity> {
         var i = 0
-        val listOfEntries = mutableListOf1<Entity>()
+        val listOfEntries = mutableListOf1<WordEntity>()
         while (i < 100) {
             val string = i.toString()
-            val testData = Entity(1, string, string)
+            val testData = WordEntity(1, string, string)
             listOfEntries.add(testData)
             runBlocking {
                 wordDAO.insertWord(testData)

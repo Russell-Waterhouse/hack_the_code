@@ -14,18 +14,18 @@ import javax.inject.Inject
 
 class SettingsActivity : AppCompatActivity(), SettingsFragment.OnSettingsFragmentInteractionListener {
 
-    lateinit var settingsComponent: SettingsComponent
+    private lateinit var settingsComponent: SettingsComponent
 
     @Inject
     lateinit var model: Model
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        settingsComponent = (applicationContext as HackTheCodeApplication).appComponent.settingsComponent().create()
+        val appComponent = (applicationContext as HackTheCodeApplication).appComponent
+        settingsComponent = appComponent.settingsComponent().create()
         settingsComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         supportFragmentManager.beginTransaction().add(R.id.settings_container, SettingsFragment.newInstance()).commit()
-
         setSupportActionBar(findViewById(R.id.settings_toolbar))
         supportActionBar?.title = getString(R.string.settings)
         supportActionBar?.setDisplayShowHomeEnabled(true)

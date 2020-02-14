@@ -4,17 +4,17 @@ import androidx.lifecycle.LiveData
 import javax.inject.Inject
 
 
-class Repository @Inject constructor(private val wordDAO: WordDAO) {
+open class Repository @Inject constructor(private val wordDAO: WordDAO) {
 
-    fun getWordsForLevel(level: Int):LiveData<List<Entity>>{
+    open fun getWordsForLevel(level: Int):LiveData<List<WordEntity>>{
         return wordDAO.getWordsForLevel(level)
     }
 
-    suspend fun insertWord(entity: Entity){
-        wordDAO.insertWord(entity)
+    open suspend fun insertWord(wordEntity: WordEntity){
+        wordDAO.insertWord(wordEntity)
     }
 
-    suspend fun deleteAllFromDatabase(){
+    open suspend fun deleteAllFromDatabase(){
         wordDAO.deleteAllFromDatabase()
     }
 }

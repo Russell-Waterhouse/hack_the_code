@@ -106,6 +106,24 @@ public class OpenSourceContributionsFragment extends Fragment {
                 }
             }
         });
+        Button leakCanaryButton = view.findViewById(R.id.leak_canary_library);
+        leakCanaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mListener != null){
+                    mListener.leakCanaryButtonPressed();
+                }
+            }
+        });
+        Button mockitoButton = view.findViewById(R.id.mockito_library);
+        mockitoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null){
+                    mListener.mockitoButtonPressed();
+                }
+            }
+        });
         return view;
     }
 
@@ -143,5 +161,7 @@ public class OpenSourceContributionsFragment extends Fragment {
         void espressoLibraryButtonPressed();
         void materialLibraryButtonPressed();
         void daggerLibraryButtonPressed();
+        void leakCanaryButtonPressed();
+        void mockitoButtonPressed();
     }
 }

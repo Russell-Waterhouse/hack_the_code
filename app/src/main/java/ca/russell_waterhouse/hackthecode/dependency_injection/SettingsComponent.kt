@@ -4,7 +4,7 @@ import ca.russell_waterhouse.hackthecode.ui.settings.SettingsActivity
 import dagger.Subcomponent
 
 @ActivityScope
-@Subcomponent
+@Subcomponent(modules = [ModelBindsModule::class])
 interface SettingsComponent{
 
     @Subcomponent.Factory

@@ -32,6 +32,10 @@
     <string name="material_url">https://github.com/material-components/material-components-android</string>
     <string name="dagger_library">Dagger Library</string>
     <string name="dagger_url">https://github.com/google/dagger</string>
+    <string name="leak_canary_library">Leak Canary</string>
+    <string name="leak_canary_url">https://square.github.io/leakcanary/</string>
+    <string name="mockito_library">Mockito Library</string>
+    <string name="mockito_url">https://site.mockito.org/</string>
 
     <string name="about_the_development">Development</string>
     <string name="about_open_source">Open Source Contributions</string>

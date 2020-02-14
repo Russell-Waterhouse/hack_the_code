@@ -15,7 +15,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "ca.russell_waterhouse.hackthecode.CustomTestRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
@@ -74,4 +74,10 @@ dependencies {
     // Using Dagger in androidTest and Robolectric too
     kaptAndroidTest "com.google.dagger:dagger-compiler:$daggerVersion"
     kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
+
+//    LeakCanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+
+    testImplementation "org.mockito:mockito-core:3.0.0"
+    androidTestImplementation "org.mockito:mockito-android:3.0.0"
 }
