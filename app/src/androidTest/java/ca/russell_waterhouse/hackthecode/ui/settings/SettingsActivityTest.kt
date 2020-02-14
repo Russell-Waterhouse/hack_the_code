@@ -18,6 +18,7 @@ class SettingsActivityTest {
     val activityScenarioRule = ActivityScenarioRule<SettingsActivity>(SettingsActivity::class.java)
     private lateinit var scenario: ActivityScenario<SettingsActivity>
     private lateinit var settings: SettingsActivity
+
     @Before
     fun setUp() {
         scenario = activityScenarioRule.scenario

@@ -10,10 +10,10 @@ import androidx.room.Query
 interface WordDAO {
 
     @Query("SELECT * FROM word_table WHERE level = :level")
-    fun getWordsForLevel(level: Int): LiveData<List<Entity>>
+    fun getWordsForLevel(level: Int): LiveData<List<WordEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertWord(entity: Entity)
+    suspend fun insertWord(wordEntity: WordEntity)
 
     @Query("DELETE FROM word_table")
     suspend fun deleteAllFromDatabase()

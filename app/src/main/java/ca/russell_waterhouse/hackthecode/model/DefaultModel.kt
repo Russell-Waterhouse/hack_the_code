@@ -2,8 +2,8 @@ package ca.russell_waterhouse.hackthecode.model
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.database.Repository
+import ca.russell_waterhouse.hackthecode.database.WordEntity
 import ca.russell_waterhouse.hackthecode.dependency_injection.ActivityScope
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderFactory
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderState
@@ -21,7 +21,7 @@ open class DefaultModel @Inject constructor(
 
     override suspend fun encodeWord(word: String){
         val encodedWord = encoderState.encode(word)
-        val entity = Entity(currentLevel, word, encodedWord)
+        val entity = WordEntity(currentLevel, word, encodedWord)
         repository.insertWord(entity)
     }
 
@@ -34,7 +34,7 @@ open class DefaultModel @Inject constructor(
         return currentLevel
     }
 
-    override fun getLiveDataWords(): LiveData<List<Entity>>{
+    override fun getLiveDataWords(): LiveData<List<WordEntity>>{
         return repository.getWordsForLevel(currentLevel)
     }
 

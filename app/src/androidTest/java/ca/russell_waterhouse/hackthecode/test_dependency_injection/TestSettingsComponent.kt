@@ -1,4 +1,4 @@
-package ca.russell_waterhouse.hackthecode
+package ca.russell_waterhouse.hackthecode.test_dependency_injection
 
 import ca.russell_waterhouse.hackthecode.dependency_injection.SettingsComponent
 import ca.russell_waterhouse.hackthecode.ui.settings.SettingsActivity

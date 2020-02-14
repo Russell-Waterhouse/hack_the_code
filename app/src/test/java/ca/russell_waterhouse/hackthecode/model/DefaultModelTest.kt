@@ -1,8 +1,8 @@
 package ca.russell_waterhouse.hackthecode.model
 
 import android.content.Context
-import ca.russell_waterhouse.hackthecode.database.Entity
 import ca.russell_waterhouse.hackthecode.database.Repository
+import ca.russell_waterhouse.hackthecode.database.WordEntity
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderFactory
 import ca.russell_waterhouse.hackthecode.model.encoding_states.EncoderStateLevel1
 import kotlinx.coroutines.runBlocking
@@ -46,7 +46,7 @@ class DefaultModelTest{
         runBlocking {
             model.encodeWord(testWord)
             verify(mockEncoder).encode(testWord)
-            verify(mockRepository).insertWord(Entity(1, testWord, testResult))
+            verify(mockRepository).insertWord(WordEntity(1, testWord, testResult))
         }
     }
 

@@ -10,7 +10,7 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import ca.russell_waterhouse.hackthecode.R
-import ca.russell_waterhouse.hackthecode.database.Entity
+import ca.russell_waterhouse.hackthecode.database.WordEntity
 import ca.russell_waterhouse.hackthecode.model.Model
 import javax.inject.Inject
 
@@ -84,7 +84,7 @@ class LevelFragment : Fragment() {
         listenerLevel = null
     }
 
-    private fun updateListOfWords(newWords: List<Entity>){
+    private fun updateListOfWords(newWords: List<WordEntity>){
         guessTable.removeAllViewsInLayout()
         for (item in newWords){
             val newRow = TableRow(context)
@@ -92,7 +92,7 @@ class LevelFragment : Fragment() {
             val right = TextView(context)
             left.text = item.word
             left.gravity = Gravity.START
-            right.text = item.encodedWordL
+            right.text = item.encodedWord
             right.gravity = Gravity.END
             newRow.addView(left)
             newRow.addView(right)
@@ -124,7 +124,7 @@ class LevelFragment : Fragment() {
          * @return A new instance of fragment LevelFragment.
          */
         @JvmStatic
-        fun newInstance(encodedString: String) =
+        fun newInstance(encodedString: String?) =
             LevelFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_ENCODED_STRING, encodedString)

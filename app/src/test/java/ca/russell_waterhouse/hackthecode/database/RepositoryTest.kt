@@ -26,7 +26,7 @@ class RepositoryTest {
     @Test
     fun insertWord() {
         runBlocking {
-            val testEntity = Entity(1, "word", "encoded word")
+            val testEntity = WordEntity(1, "word", "encoded word")
             repository.insertWord(testEntity)
             verify(mockDAO).insertWord(testEntity)
         }
